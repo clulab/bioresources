@@ -1,2 +1,2 @@
 # bioresources
-Data resources from the biology domain
+Data resources from the biomedical domain
