@@ -1,6 +1,6 @@
 name := "bioresources"
 
-version := "1.0.0-SNAPSHOT"
+version := "1.0.0"
 
 organization := "org.clulab"
 
@@ -12,6 +12,9 @@ scalaVersion := "2.11.6"
 
 // publish to a maven repo
 publishMavenStyle := true
+
+// don't include scala version in artifact, we don't need it
+crossPaths := false
 
 // the standard maven repository
 publishTo := {
