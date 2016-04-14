@@ -1,5 +1,6 @@
 #Changes
 =======
++ **1.1.4** - Added PFAM protein family KB, prioritize/use in NER.
 + **1.1.3** - Added 3 new cancer terms to bio process KB. The Cell_Lines KB was renamed to CellLine.
 + **1.1.2** - Added plural forms for the celullar location KB. Removed some entries (Mum) from the Species KB, because they were introducing too many false positives.
 + **1.1.1** - Reduced species KB to most common species names. Removed tissue-type KB from the NER.
