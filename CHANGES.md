@@ -1,5 +1,6 @@
 #Changes
 =======
++ **1.1.7** - Replace local cell-type KB with Cell Ontology, local cell line KB with Cellosaurus, local organ KB with Uberon.
 + **1.1.6** - Activate Uniprot Tissue type KB, ordered before Organs. Order Proteins before Protein Families.
 + **1.1.5** - Replace ChEBI and HMDB with PubChem subset.
 + **1.1.4** - Added PFAM protein family KB, prioritize/use in NER.
