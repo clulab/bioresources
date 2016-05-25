@@ -1,0 +1,8 @@
+#
+# This file contains a list of single-token entities that should not be marked as NEs when seen in lower case
+#
+blot
+prey
+role
+cell
+cells

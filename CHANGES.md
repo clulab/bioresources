@@ -1,5 +1,6 @@
 #Changes
 =======
++ **1.1.8** - Added a list of tokens that should not be marked as named entities when in lower case
 + **1.1.7** - Replace local cell-type KB with Cell Ontology, local cell line KB with Cellosaurus, local organ KB with Uberon.
 + **1.1.6** - Activate Uniprot Tissue type KB, ordered before Organs. Order Proteins before Protein Families.
 + **1.1.5** - Replace ChEBI and HMDB with PubChem subset.
