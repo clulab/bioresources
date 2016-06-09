@@ -20,8 +20,8 @@ leg
 legs
 knee
 knees
-anckle
-anckles
+ankle
+ankles
 foot
 feet
 toe
