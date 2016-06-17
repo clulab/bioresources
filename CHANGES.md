@@ -1,5 +1,6 @@
 #Changes
 =======
++ **1.1.10** - Add entries to manual simple chemical KB.
 + **1.1.9** - Repurpose manual files: update manual GPP & family with MITRE model data.
 + **1.1.8** - Added a list of tokens that should not be marked as named entities when in lower case
 + **1.1.7** - Replace local cell-type KB with Cell Ontology, local cell line KB with Cellosaurus, local organ KB with Uberon.
