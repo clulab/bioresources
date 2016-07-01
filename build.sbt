@@ -1,6 +1,6 @@
 name := "bioresources"
 
-version := "1.1.10"
+version := "1.1.11-SNAPSHOT"
 
 organization := "org.clulab"
 
