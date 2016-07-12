@@ -1,6 +1,6 @@
 #Changes
 =======
-+ **1.1.12** -
++ **1.1.12** - Update NER/grounding override file for internal conflict. Update protein family mapping table with uniprot namespace.
 + **1.1.11** - Add NER/grounding override file and remove manual KBs. Reformat all KB files. Add protein kinase file. Update for processors package changes.
 + **1.1.10** - Add feedback entries from BG/MITRE/SRI to manual chemical and manual family KBs. Update NMZ auxliary KB.
 + **1.1.9** - Repurpose manual files: update manual GPP & family with MITRE model data.
