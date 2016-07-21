@@ -4,7 +4,7 @@ version := "1.1.14-SNAPSHOT"
 
 organization := "org.clulab"
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.11.8"
 
 //
 // publishing settings
