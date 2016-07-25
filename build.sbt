@@ -1,10 +1,28 @@
-name := "bioresources"
+import ReleaseTransformations._
 
-version := "1.1.14-SNAPSHOT"
+name := "bioresources"
 
 organization := "org.clulab"
 
 scalaVersion := "2.11.8"
+
+
+// these are the steps to be performed during release
+releaseProcess := Seq[ReleaseStep](
+  checkSnapshotDependencies,
+  inquireVersions,
+  runClean,
+  runTest,
+  setReleaseVersion,
+  commitReleaseVersion,
+  tagRelease,
+  ReleaseStep(action = Command.process("publishSigned", _)),
+  setNextVersion,
+  commitNextVersion,
+  ReleaseStep(action = Command.process("sonatypeReleaseAll", _)),
+  pushChanges
+)
+
 
 //
 // publishing settings
