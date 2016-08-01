@@ -1,5 +1,6 @@
 #Changes
 =======
++ **1.1.14** - Update NER override and BioProcess KBs from DR3 and collaborator feedback. Update build to use Scala 2.11.8 and sbt release plugin.
 + **1.1.13** - Update protein family mapping table with PFAM namespace. Continue refining protein family mapping and NER override KBs with collaborator feedback to support Reach project.
 + **1.1.12** - Update NER/grounding override file for internal conflict. Update protein family mapping table with uniprot namespace.
 + **1.1.11** - Add NER/grounding override file and remove manual KBs. Reformat all KB files. Add protein kinase file. Update for processors package changes.
