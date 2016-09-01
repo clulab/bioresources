@@ -27,3 +27,5 @@ feet
 toe
 toes
 processes
+XREF_BIBR
+XREF_FIG
