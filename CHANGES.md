@@ -1,6 +1,6 @@
 #Changes
 =======
-+ **1.1.16** - Updated the NER stop word list. Added a new KB with some cell lines from the ATCC catalog. Added a misc file with information about cell lines, like its organism, disease and organ for consumption by REACH.
++ **1.1.16** - Updated the NER stop word list. Added a new KB with some cell lines from the ATCC catalog. Added a file for Reach with information about cell lines: organism, disease, and organ. Added small drug names KB. Add NER overrides from Hans error feedback analysis. Resolve and move some chemicals from biopax to override KB.
 + **1.1.15** - Continue updating NER override and BioProcess KBs.
 + **1.1.14** - Update NER override and BioProcess KBs from DR3 and collaborator feedback. Update build to use Scala 2.11.8 and sbt release plugin.
 + **1.1.13** - Update protein family mapping table with PFAM namespace. Continue refining protein family mapping and NER override KBs with collaborator feedback to support Reach project.
