@@ -1,5 +1,6 @@
 #Changes
 =======
++ **1.1.18** - Improved override list to match the CMU model.
 + **1.1.17** - Updated the NER stop word list. Added a new KB with some cell lines from the ATCC catalog. Added a file for Reach with information about cell lines: organism, disease, and organ. Added small drug names KB. Add NER overrides from Hans error feedback analysis. Resolve and move some chemicals from biopax to override KB.
 + **1.1.16** - Lost in space while releasing to Maven Central.
 + **1.1.15** - Continue updating NER override and BioProcess KBs.
