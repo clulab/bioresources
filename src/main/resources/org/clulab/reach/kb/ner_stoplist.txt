@@ -19,6 +19,8 @@ hips
 lead
 leg
 legs
+link
+links
 knee
 knees
 ankle
