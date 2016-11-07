@@ -1,6 +1,7 @@
 #Changes
 =======
-+ **1.1.18** -  Add link/links to NER stoplist per MS. Add gene name affixes resource file. Added the FGF protein and family to the override KB.
++ **1.1.19** - Add protein family and complex KBs derived from Harvard Bioentites project.
++ **1.1.18** - Add link/links to NER stoplist per MS. Add gene name affixes resource file. Added the FGF protein and family to the override KB.
 + **1.1.18** - Improved override list to match the CMU model. Fix last synonym truncated bug for Cellosaurus.
 + **1.1.17** - Updated the NER stop word list. Added a new KB with some cell lines from the ATCC catalog. Added a file for Reach with information about cell lines: organism, disease, and organ. Added small drug names KB. Add NER overrides from Hans error feedback analysis. Resolve and move some chemicals from biopax to override KB.
 + **1.1.16** - Lost in space while releasing to Maven Central.
