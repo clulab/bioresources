@@ -27,6 +27,7 @@ ankle
 ankles
 foot
 feet
+time
 toe
 toes
 processes
