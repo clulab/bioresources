@@ -1,5 +1,7 @@
 #Changes
 =======
++ **1.1.19** - Remove NER Override conflicts with new BE KBs, add entries giving BE families priority over GGP.
++ **1.1.19** - Add 7 HMDB overrides per NMZ request of 11/23/2016. Remap previous Override complexes as synonyms to new BE complex entries.
 + **1.1.19** - Add protein family and complex KBs derived from Harvard Bioentites project. Add 'time' to NER stop list.
 + **1.1.18** - Add link/links to NER stoplist per MS. Add gene name affixes resource file. Added the FGF protein and family to the override KB.
 + **1.1.18** - Improved override list to match the CMU model. Fix last synonym truncated bug for Cellosaurus.
