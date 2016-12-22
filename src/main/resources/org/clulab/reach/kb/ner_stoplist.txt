@@ -6,6 +6,7 @@ prey
 role
 cell
 cells
+damage
 head
 neck
 shoulder
