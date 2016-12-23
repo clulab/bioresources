@@ -1,5 +1,6 @@
 #Changes
 =======
++ **1.1.19** - Add additional DNA damage types to Bioprocess KB. Add Goat entries to Species KB for PhaseIII eval.
 + **1.1.19** - Add additional DyCE model entries to NER Override per Gyoji/Cheryl email 11/30/16.
 + **1.1.19** - Remove NER Override conflicts with new BE KBs, add entries giving BE families priority over GGP.
 + **1.1.19** - Add 7 HMDB overrides per NMZ request of 11/23/2016. Remap previous Override complexes as synonyms to new BE complex entries.
