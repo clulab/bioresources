@@ -1,5 +1,6 @@
 #Changes
 =======
++ **1.1.22** - Replace PhaseIII override file with version of 1/17/2017.
 + **1.1.21** - Modified PhaseIII override file derived from MITRE Korkut data.
 + **1.1.20** - Add additional cancer drugs for PhaseIII eval. Add PhaseIII override file derived from MITRE Korkut data.
 + **1.1.20** - Add additional DNA damage types to Bioprocess KB. Add Goat entries to Species KB for PhaseIII eval.
