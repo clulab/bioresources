@@ -1,5 +1,6 @@
 #Changes
 =======
++ **1.1.23** - Add last two proteinogenic amino acids to NER override file.
 + **1.1.23** - Use consistent SBT version across projects. Add mitochondria to NER override KB, per issue #16.
 + **1.1.22** - Replace PhaseIII override file with version of 1/17/2017.
 + **1.1.21** - Modified PhaseIII override file derived from MITRE Korkut data.
