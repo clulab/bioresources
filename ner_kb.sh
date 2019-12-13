@@ -9,10 +9,10 @@
 cd ../processors
 
 # generete the NER KBs here
-sbt 'run-main org.clulab.processors.bionlp.ner.KBGenerator ../bioresources/ner_kb.config ../bioresources/src/main/resources/org/clulab/reach/kb/ ../bioresources/src/main/resources/org/clulab/reach/kb/ner'
+sbt 'runMain org.clulab.processors.bionlp.ner.KBGenerator ../bioresources/ner_kb.config ../bioresources/src/main/resources/org/clulab/reach/kb/ ../bioresources/src/main/resources/org/clulab/reach/kb/ner'
 
 # generate the serialized LexiconNER model now
-sbt 'run-main org.clulab.processors.bionlp.ner.KBLoader ../bioresources/src/main/resources/org/clulab/reach/kb/ner/model.ser.gz'
+sbt 'runMain org.clulab.processors.bionlp.ner.KBLoader ../bioresources/src/main/resources/org/clulab/reach/kb/ner/model.ser.gz'
 
 cd ../bioresources
 
