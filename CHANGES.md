@@ -1,6 +1,7 @@
 #Changes
 =======
-+ **1.1.27** - Update PubChem
++ **1.1.28** - Rerun ner_kb.sh with update from 1.1.28.
++ **1.1.27** - Update PubChem.
 + **1.1.26** - Added missing chemicals (Reach issue #645).
 + **1.1.25** - Added serialized LexiconNER model constructed from kb/ner knowledge bases.
 + **1.1.24** - Add Harvard BioEntities updates to families and complexes from 8/22/2017.
