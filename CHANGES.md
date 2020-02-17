@@ -1,5 +1,6 @@
 #Changes
 =======
++ **1.1.29** - Rerun processors 362171 with emoticon fix.
 + **1.1.28** - Rerun ner_kb.sh with update from 1.1.28.
 + **1.1.27** - Update PubChem.
 + **1.1.26** - Added missing chemicals (Reach issue #645).
