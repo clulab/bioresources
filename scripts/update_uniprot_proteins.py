@@ -58,11 +58,18 @@ def process_row(row):
 
 
 if __name__ == '__main__':
-    if not os.path.exists('uniprot_entries.tsv'):
-        res = requests.get(uniprot_url, params=params)
-        res.raise_for_status()
-        with open('uniprot_entries.tsv', 'w') as fh:
-            fh.write(res.text)
+    # Basic positioning of folders
+    here = os.path.dirname(os.path.abspath(__file__))
+    kb_dir = os.path.join(here, 'src', 'main', 'resources', 'org', 'clulab',
+                          'reach', 'kb')
+    resource_fname = 'uniprot-proteins.tsv'
+
+    # Download the custom UniProt resource file
+    res = requests.get(uniprot_url, params=params)
+    res.raise_for_status()
+    with open('uniprot_entries.tsv', 'w') as fh:
+        fh.write(res.text)
+    # Process the resource file into appropriate entries
     processed_entries = []
     with open('uniprot_entries.tsv', 'r') as fh:
         reader = csv.reader(fh, delimiter='\t')
@@ -76,7 +83,8 @@ if __name__ == '__main__':
                                key=lambda x: (re.sub('[^A-Za-z0-9]', '',
                                                      x[0]).lower(), x[1],
                                                      x[2]))
-    with open('kb/uniprot-proteins.tsv.update', 'w') as fh:
+    # Now dump the entries into an updated TSV file
+    with open(resource_fname, 'w') as fh:
         writer = csv.writer(fh, delimiter='\t')
         for entry in processed_entries:
             writer.writerow(entry)
