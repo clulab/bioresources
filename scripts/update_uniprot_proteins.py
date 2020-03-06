@@ -3,7 +3,6 @@ import re
 import csv
 import requests
 import itertools
-from gilda.generate_terms import parse_uniprot_synonyms
 
 
 # Base URL for UniProt
@@ -55,6 +54,40 @@ def process_row(row):
             continue
         entries.append((gene, entry, organism))
     return entries
+
+
+def parse_uniprot_synonyms(synonyms_str):
+    synonyms_str = re.sub(r'\[Includes: ([^]])+\]',
+                          '', synonyms_str).strip()
+    synonyms_str = re.sub(r'\[Cleaved into: ([^]])+\]',
+                          '', synonyms_str).strip()
+
+    def find_block_from_right(s):
+        parentheses_depth = 0
+        assert s.endswith(')')
+        s = s[:-1]
+        block = ''
+        for c in s[::-1]:
+            if c == ')':
+                parentheses_depth += 1
+            elif c == '(':
+                if parentheses_depth > 0:
+                    parentheses_depth -= 1
+                else:
+                    return block
+            block = c + block
+        return block
+
+    syns = []
+    while True:
+        if not synonyms_str:
+            return syns
+        if not synonyms_str.endswith(')'):
+            return [synonyms_str] + syns
+
+        syn = find_block_from_right(synonyms_str)
+        syns = [syn] + syns
+        synonyms_str = synonyms_str[:-len(syn)-3]
 
 
 if __name__ == '__main__':
