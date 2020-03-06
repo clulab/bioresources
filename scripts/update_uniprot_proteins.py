@@ -93,9 +93,9 @@ def parse_uniprot_synonyms(synonyms_str):
 if __name__ == '__main__':
     # Basic positioning of folders
     here = os.path.dirname(os.path.abspath(__file__))
-    kb_dir = os.path.join(here, 'src', 'main', 'resources', 'org', 'clulab',
-                          'reach', 'kb')
-    resource_fname = 'uniprot-proteins.tsv'
+    kb_dir = os.path.join(here, os.pardir, 'src', 'main', 'resources', 'org',
+                          'clulab', 'reach', 'kb')
+    resource_fname = os.path.join(kb_dir, 'uniprot-proteins.tsv')
 
     # Download the custom UniProt resource file
     res = requests.get(uniprot_url, params=params)
