@@ -31,16 +31,18 @@ def download_hgnc_entries():
 def generate_hgnc_terms():
     species = 'Human'
     entries = []
+    nskipped = 0
     with open('hgnc_entries.tsv', 'r') as fh:
         reader = csv.reader(fh, delimiter='\t')
         next(reader)
         for row in reader:
             hgnc_id, hgnc_symbol, protein_name, status, synonyms_str, \
                 prev_symbols_str, uniprot_ids_str = row
-            uniprot_ids = [s.strip() for s in uniprot_id.split(', ')] \
+            uniprot_ids = [s.strip() for s in uniprot_ids_str.split(', ')] \
                 if uniprot_ids_str else []
             # Skip genes that don't correspond to a single protein
             if len(uniprot_ids) != 1:
+                nskipped += 1
                 continue
             uniprot_id = uniprot_ids[0]
             synonym_list = [s.strip() for s in synonyms_str.split(', ')] \
@@ -52,7 +54,22 @@ def generate_hgnc_terms():
                 prev_symbols_list
             for synonym in synonyms:
                 entries.append((synonym, uniprot_id, species))
+    print('Found a total of %d entries and skipped %d rows' %
+          (len(entries), nskipped))
     return entries
+
+
+def remove_uniprot_redundancies(uniprot_file, hgnc_entries):
+    print('Filtering %d entries from HGNC' % len(hgnc_entries))
+    with open(uniprot_file, 'r') as fh:
+        uniprot_entries = {(row[0], row[1])
+                           for row in csv.reader(fh, delimiter='\t')
+                           if row[2] == 'Human'}
+    unique_hgnc_entries = [entry for entry in hgnc_entries
+                           if (entry[0], entry[1]) not in uniprot_entries]
+    print('Filtered to %d entries that aren\'t in UniProt' %
+          len(unique_hgnc_entries))
+    return unique_hgnc_entries
 
 
 if __name__ == '__main__':
@@ -66,6 +83,9 @@ if __name__ == '__main__':
     # We sort the entries first by the synonym but in a way that special
     # characters and capitalization is ignored, then sort by ID and then
     # by organism.
+    entries = remove_uniprot_redundancies(os.path.join(kb_dir,
+                                                       'uniprot-proteins.tsv'),
+                                          entries)
     processed_entries = sorted(entries,
                                key=lambda x: (re.sub('[^A-Za-z0-9]', '',
                                                      x[0]).lower(), x[1],
