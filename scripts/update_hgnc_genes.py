@@ -35,17 +35,19 @@ def generate_hgnc_terms():
         reader = csv.reader(fh, delimiter='\t')
         next(reader)
         for row in reader:
-            hgnc_id, hgnc_symbol, protein_name, status, synonyms, \
-                prev_symbols, uniprot_id = row
-            if not uniprot_id:
-                continue
-            uniprot_ids = uniprot_id.split(', ')
+            hgnc_id, hgnc_symbol, protein_name, status, synonyms_str, \
+                prev_symbols_str, uniprot_ids_str = row
+            uniprot_ids = [s.strip() for s in uniprot_id.split(', ')] \
+                if uniprot_ids_str else []
             # Skip genes that don't correspond to a single protein
             if len(uniprot_ids) != 1:
                 continue
-            uniprot_id = uniprot_ids[0].strip()
-            synonym_list = synonyms.split()
-            prev_symbols_list = prev_symbols.split()
+            uniprot_id = uniprot_ids[0]
+            synonym_list = [s.strip() for s in synonyms_str.split(', ')] \
+                if synonyms_str else []
+            prev_symbols_list = [s.strip()
+                                 for s in prev_symbols_str.split(', ')] \
+                if prev_symbols_str else []
             synonyms = [hgnc_symbol, protein_name] + synonym_list + \
                 prev_symbols_list
             for synonym in synonyms:
