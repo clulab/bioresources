@@ -41,12 +41,29 @@ def get_overrides(overrides_rows, other_strings, famplex_only=True):
     return overrides
 
 
+def extend_overrides(override_fname, overrides):
+    with open(override_fname, 'r') as fh:
+        lines = [l.strip() for l in fh.readlines()]
+    try:
+        idx = lines.index('# FamPlex overrides')
+    except ValueError:
+        idx = None
+    lines_out = lines[:idx+1] if idx else lines
+    # Add comment block if it is not already there
+    lines_out += [] if idx else ['#', '# FamPlex overrides', '#']
+    lines_out += ['\t'.join(l) for l in overrides]
+    with open(override_fname, 'w') as fh:
+        for line in lines_out:
+            fh.write('%s\n' % line)
+
+
 if __name__ == '__main__':
     # Basic positioning of folders
     here = os.path.dirname(os.path.abspath(__file__))
     kb_dir = os.path.join(here, os.pardir, 'src', 'main', 'resources', 'org',
                           'clulab', 'reach', 'kb')
     groundings_fname = os.path.join(kb_dir, 'famplex.tsv')
+    override_fname = os.path.join(kb_dir, 'NER-Grounding-Override.tsv')
 
     # Download and write to groundings file
     with open(groundings_fname, 'w') as fh:
@@ -61,3 +78,5 @@ if __name__ == '__main__':
         [row.split('\t') for row in
          requests.get(base_url + famplex_overrides).text.split('\n')]
     overrides = get_overrides(overrides_rows, other_strings, famplex_only=True)
+
+    extend_overrides(override_fname, overrides)
