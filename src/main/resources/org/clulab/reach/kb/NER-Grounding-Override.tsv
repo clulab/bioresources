@@ -415,3 +415,324 @@ retinal neurons	UBERON:0001781		uberon	Organ
 vulval precursor cells (VPC)	UA-ORG-1083		uaz	Organ
 wi-38 fibroblasts	UA-CLine-888		uaz	CellLine
 slp-76	UA-CLine-100047		uaz	CellLine
+#
+# FamPlex overrides
+#
+14-3-3	p14_3_3	fplx	FamilyOrComplex
+ABL	ABL_family	fplx	FamilyOrComplex
+ACC	ACC	fplx	FamilyOrComplex
+ACS	Acetyl_CoA_synthetase	fplx	FamilyOrComplex
+AKT	AKT	fplx	FamilyOrComplex
+ALDH	ALDH	fplx	FamilyOrComplex
+ALDO	ALDO	fplx	FamilyOrComplex
+ALG10	ALG10	fplx	FamilyOrComplex
+AMLC	MYL_alkali	fplx	FamilyOrComplex
+AMPK	AMPK	fplx	FamilyOrComplex
+AP-1	AP1	fplx	FamilyOrComplex
+AP-2	Adaptor_protein_II	fplx	FamilyOrComplex
+AP-2 transcription factor	TFAP2	fplx	FamilyOrComplex
+AP-3	Adaptor_protein_III	fplx	FamilyOrComplex
+AP1	AP1	fplx	FamilyOrComplex
+AP2	Adaptor_protein_II	fplx	FamilyOrComplex
+AP3	Adaptor_protein_III	fplx	FamilyOrComplex
+ATG4	ATG4	fplx	FamilyOrComplex
+ATP receptor	P2R	fplx	FamilyOrComplex
+ATP synthase	ATP_synthase	fplx	FamilyOrComplex
+ATP1B	ATP1B	fplx	FamilyOrComplex
+Acetate-CoA ligase	Acetyl_CoA_synthetase	fplx	FamilyOrComplex
+Acetyl-CoA carboxylase	ACC	fplx	FamilyOrComplex
+Acetyl-CoA synthetase	Acetyl_CoA_synthetase	fplx	FamilyOrComplex
+Akt	AKT	fplx	FamilyOrComplex
+Aldehyde dehydrogenase	ALDH	fplx	FamilyOrComplex
+Apolipoprotein	Apolipoprotein	fplx	FamilyOrComplex
+Axin	AXIN	fplx	FamilyOrComplex
+BARK	ADRBK	fplx	FamilyOrComplex
+BMP	BMP	fplx	FamilyOrComplex
+BMP type II receptor	BMP_receptor_type_II	fplx	FamilyOrComplex
+BRI	BMP_receptor_type_I	fplx	FamilyOrComplex
+BVR	BLVR	fplx	FamilyOrComplex
+Beta tubulin	TUBB	fplx	FamilyOrComplex
+Beta-tubulin	TUBB	fplx	FamilyOrComplex
+C/EBP	CEBP	fplx	FamilyOrComplex
+C1	C1	fplx	FamilyOrComplex
+C1q	C1q	fplx	FamilyOrComplex
+CAMK	CAMK	fplx	FamilyOrComplex
+CAMK-II	CAMK2_complex	fplx	FamilyOrComplex
+CAMK2	CAMK2_complex	fplx	FamilyOrComplex
+CBF3	CBF3	fplx	FamilyOrComplex
+CCT	CCT_complex	fplx	FamilyOrComplex
+CD16	CD16	fplx	FamilyOrComplex
+CD32	CD32	fplx	FamilyOrComplex
+CD64	CD64	fplx	FamilyOrComplex
+CD8	CD8	fplx	FamilyOrComplex
+CDC25	CDC25	fplx	FamilyOrComplex
+CDK	CDK	fplx	FamilyOrComplex
+CDKN1	CDKN1	fplx	FamilyOrComplex
+CDKN2	CDKN2	fplx	FamilyOrComplex
+CK-1	CSNK1	fplx	FamilyOrComplex
+CK1	CSNK1	fplx	FamilyOrComplex
+COX6A	COX6A	fplx	FamilyOrComplex
+COX7A	COX7A	fplx	FamilyOrComplex
+CREB	CREB	fplx	FamilyOrComplex
+CRISP	CRISP	fplx	FamilyOrComplex
+CRSP	CRSP	fplx	FamilyOrComplex
+CRTC	CRTC	fplx	FamilyOrComplex
+CaM	CALM	fplx	FamilyOrComplex
+CaM kinase II	CAMK2_complex	fplx	FamilyOrComplex
+CaMK2	CAMK2_complex	fplx	FamilyOrComplex
+CaMKII	CAMK2_complex	fplx	FamilyOrComplex
+Calcineurin regulatory subunit	PPP3R	fplx	FamilyOrComplex
+Calmodulin	CALM	fplx	FamilyOrComplex
+Caveolin	CAV	fplx	FamilyOrComplex
+Cdc25	CDC25	fplx	FamilyOrComplex
+Cdkn1	CDKN1	fplx	FamilyOrComplex
+Connexin	GJ	fplx	FamilyOrComplex
+Cox4	COX4	fplx	FamilyOrComplex
+Cox6b	COX6B	fplx	FamilyOrComplex
+Cox7a	COX7A	fplx	FamilyOrComplex
+Cox7b	COX7B	fplx	FamilyOrComplex
+Cox8	COX8	fplx	FamilyOrComplex
+Cyclin	Cyclin	fplx	FamilyOrComplex
+Cyclin D	Cyclin_D	fplx	FamilyOrComplex
+Cyclin-A	Cyclin_A	fplx	FamilyOrComplex
+DAG kinase	DGK	fplx	FamilyOrComplex
+DAPK	DAPK	fplx	FamilyOrComplex
+DGC	DGC	fplx	FamilyOrComplex
+DGK	DGK	fplx	FamilyOrComplex
+DUSP	DUSP	fplx	FamilyOrComplex
+DYRK	DYRK	fplx	FamilyOrComplex
+Dgk	DGK	fplx	FamilyOrComplex
+Dvl	DVL	fplx	FamilyOrComplex
+E2 ubiquitin-conjugating enzyme	UBE2	fplx	FamilyOrComplex
+E3	E3_Ub_ligase	fplx	FamilyOrComplex
+E3 ubiquitin ligase	E3_Ub_ligase	fplx	FamilyOrComplex
+EIF2B	EIF2B	fplx	FamilyOrComplex
+ERK	ERK	fplx	FamilyOrComplex
+ESR	ESR	fplx	FamilyOrComplex
+ETS	ETS	fplx	FamilyOrComplex
+EXT	EXT	fplx	FamilyOrComplex
+Erk	ERK	fplx	FamilyOrComplex
+FGF	FGF	fplx	FamilyOrComplex
+FGFR	FGFR	fplx	FamilyOrComplex
+FOS	FOS_family	fplx	FamilyOrComplex
+FOXO	FOXO	fplx	FamilyOrComplex
+Fos	FOS_family	fplx	FamilyOrComplex
+Fz	FZD	fplx	FamilyOrComplex
+G protein	G_protein	fplx	FamilyOrComplex
+G12	G_12	fplx	FamilyOrComplex
+G12 family	G_12	fplx	FamilyOrComplex
+GAP	GAP	fplx	FamilyOrComplex
+GATA	GATA	fplx	FamilyOrComplex
+GEF	GEF	fplx	FamilyOrComplex
+GLUT	SLC2A	fplx	FamilyOrComplex
+GPCR	GPCR	fplx	FamilyOrComplex
+GSK-3	GSK3	fplx	FamilyOrComplex
+GSK3	GSK3	fplx	FamilyOrComplex
+GST	GST	fplx	FamilyOrComplex
+GTPase-activating protein	GAP	fplx	FamilyOrComplex
+G_alpha	G_alpha	fplx	FamilyOrComplex
+Galphai	G_i_alpha	fplx	FamilyOrComplex
+Galphaq	G_q_alpha	fplx	FamilyOrComplex
+Gamma tubulin	TUBG	fplx	FamilyOrComplex
+Glycogen phosphorylase	PYG	fplx	FamilyOrComplex
+Glycosyltransferase family 6	GTF_family_6	fplx	FamilyOrComplex
+Gs family	G_s	fplx	FamilyOrComplex
+H2B	Histone_H2B	fplx	FamilyOrComplex
+H3	Histone_H3	fplx	FamilyOrComplex
+H4	Histone_H4	fplx	FamilyOrComplex
+HDAC	HDAC	fplx	FamilyOrComplex
+HIF-1	HIF1	fplx	FamilyOrComplex
+HSP70	HSPA	fplx	FamilyOrComplex
+HSP90	HSP90	fplx	FamilyOrComplex
+HSP90A	HSP90A	fplx	FamilyOrComplex
+Histone	Histone	fplx	FamilyOrComplex
+Histone H2A	Histone_H2A	fplx	FamilyOrComplex
+Hsp70	HSPA	fplx	FamilyOrComplex
+Hsp90	HSP90	fplx	FamilyOrComplex
+IFN	Interferon	fplx	FamilyOrComplex
+IFN-alpha	IFNA	fplx	FamilyOrComplex
+IFNGR	Interferon_gamma_receptor	fplx	FamilyOrComplex
+IGFBP	IGFBP	fplx	FamilyOrComplex
+IK1	KCNJ	fplx	FamilyOrComplex
+IL12	IL12	fplx	FamilyOrComplex
+IRS	IRS	fplx	FamilyOrComplex
+IkappaB kinase	IKK_complex	fplx	FamilyOrComplex
+Interferon beta	IFNB	fplx	FamilyOrComplex
+JAK	JAK	fplx	FamilyOrComplex
+JNK	JNK	fplx	FamilyOrComplex
+JUN	JUN_family	fplx	FamilyOrComplex
+KSR	KSR	fplx	FamilyOrComplex
+Kinesin	Kinesin	fplx	FamilyOrComplex
+LC3	MAP1LC3	fplx	FamilyOrComplex
+LDH	LDH	fplx	FamilyOrComplex
+LH	LH	fplx	FamilyOrComplex
+LM-1	Laminin_111	fplx	FamilyOrComplex
+Ligand-gated ion channel	Ligand_gated_ion_channels	fplx	FamilyOrComplex
+Liver X receptor	LXR	fplx	FamilyOrComplex
+MAC	MAC	fplx	FamilyOrComplex
+MAPK	MAPK	fplx	FamilyOrComplex
+MAPK kinase	MAP2K	fplx	FamilyOrComplex
+MAPK kinase kinase	MAP3K	fplx	FamilyOrComplex
+MAPKKK	MAP3K	fplx	FamilyOrComplex
+MCM	MCM	fplx	FamilyOrComplex
+MEF2	MEF2	fplx	FamilyOrComplex
+MEK	MEK	fplx	FamilyOrComplex
+MGAT	MGAT	fplx	FamilyOrComplex
+MLC	MYL	fplx	FamilyOrComplex
+MMP	MMP	fplx	FamilyOrComplex
+MT	Metallothionein	fplx	FamilyOrComplex
+Metallothionein	Metallothionein	fplx	FamilyOrComplex
+Mhc	MYH	fplx	FamilyOrComplex
+Myosin heavy chain	MYH	fplx	FamilyOrComplex
+NADH dehydrogenase	NADH_dehydrogenase	fplx	FamilyOrComplex
+NF-E2	NFE	fplx	FamilyOrComplex
+NF-kappaB	NFkappaB	fplx	FamilyOrComplex
+NFkappaB	NFkappaB	fplx	FamilyOrComplex
+NOS	NOS	fplx	FamilyOrComplex
+Natriuretic peptide	Natriuretic_peptide	fplx	FamilyOrComplex
+Neuregulin	NRG	fplx	FamilyOrComplex
+Notch	Notch	fplx	FamilyOrComplex
+P2X	P2RX	fplx	FamilyOrComplex
+P2X purinoreceptor	P2RX	fplx	FamilyOrComplex
+PAK	PAK	fplx	FamilyOrComplex
+PBX	PBX	fplx	FamilyOrComplex
+PDE	PDE	fplx	FamilyOrComplex
+PDE1	PDE1	fplx	FamilyOrComplex
+PDE8	PDE8	fplx	FamilyOrComplex
+PDGF	PDGF	fplx	FamilyOrComplex
+PDGFR	PDGFR	fplx	FamilyOrComplex
+PDH	PDH	fplx	FamilyOrComplex
+PI3-kinase	PI3K	fplx	FamilyOrComplex
+PI3K	PI3K	fplx	FamilyOrComplex
+PI4K	PI4K	fplx	FamilyOrComplex
+PIM	PIM	fplx	FamilyOrComplex
+PKA C-alpha	PRKAC	fplx	FamilyOrComplex
+PKA regulatory subunit	PRKAR	fplx	FamilyOrComplex
+PKB	AKT	fplx	FamilyOrComplex
+PKC	PKC	fplx	FamilyOrComplex
+PKG	PRKG	fplx	FamilyOrComplex
+PKI	PKI	fplx	FamilyOrComplex
+PLA2G4	PLA2G4	fplx	FamilyOrComplex
+PLC	PLC	fplx	FamilyOrComplex
+PLC-gamma	PLCG	fplx	FamilyOrComplex
+PP1	PPP1	fplx	FamilyOrComplex
+PP1C	PPP1C	fplx	FamilyOrComplex
+PP1c	PPP1C	fplx	FamilyOrComplex
+PP2A	PPP2	fplx	FamilyOrComplex
+PP2Ac	PPP2C	fplx	FamilyOrComplex
+PPAR	PPAR	fplx	FamilyOrComplex
+PPP1	PPP1	fplx	FamilyOrComplex
+PRC2	PRC2_complex	fplx	FamilyOrComplex
+PRKAA	AMPK_alpha	fplx	FamilyOrComplex
+PTX	Pertussis_toxin	fplx	FamilyOrComplex
+Parvin	PARV	fplx	FamilyOrComplex
+Patched	Patched	fplx	FamilyOrComplex
+Peroxiredoxin	PRDX	fplx	FamilyOrComplex
+Phosphodiesterase 1	PDE1	fplx	FamilyOrComplex
+Phosphodiesterase 3	PDE3	fplx	FamilyOrComplex
+Phosphodiesterase 4	PDE4	fplx	FamilyOrComplex
+Phosphodiesterase 6	PDE6	fplx	FamilyOrComplex
+Phosphodiesterase 7	PDE7	fplx	FamilyOrComplex
+Phospholipase C	PLC	fplx	FamilyOrComplex
+Phospholipase D	PLD	fplx	FamilyOrComplex
+Pol I	RNApo_I	fplx	FamilyOrComplex
+Porin	Porins	fplx	FamilyOrComplex
+Potassium channel	KCN	fplx	FamilyOrComplex
+Profilin	PFN	fplx	FamilyOrComplex
+Protease	Protease	fplx	FamilyOrComplex
+Protein kinase A regulatory subunit	PRKAR	fplx	FamilyOrComplex
+Proteinase	Protease	fplx	FamilyOrComplex
+Purinergic receptor	Purinergic_receptors	fplx	FamilyOrComplex
+Pyruvate dehydrogenase kinase	PDK	fplx	FamilyOrComplex
+RAB	RAB	fplx	FamilyOrComplex
+RAC	RAC	fplx	FamilyOrComplex
+RAF	RAF	fplx	FamilyOrComplex
+RAR	RAR	fplx	FamilyOrComplex
+RAS	RAS	fplx	FamilyOrComplex
+RASA	RASA	fplx	FamilyOrComplex
+RASAL	RASAL	fplx	FamilyOrComplex
+RASGRP	RASGRP	fplx	FamilyOrComplex
+RFC	RFC	fplx	FamilyOrComplex
+RFX	RFX	fplx	FamilyOrComplex
+RHO	RHO	fplx	FamilyOrComplex
+RHOGDI	RhoGDI	fplx	FamilyOrComplex
+RLR	RLR	fplx	FamilyOrComplex
+ROCK	ROCK	fplx	FamilyOrComplex
+RPA	RPA	fplx	FamilyOrComplex
+RPS6KA	P90RSK	fplx	FamilyOrComplex
+RSK	RSK	fplx	FamilyOrComplex
+RXR	RXR	fplx	FamilyOrComplex
+Raf	RAF	fplx	FamilyOrComplex
+Rap guanine nucleotide exchange factor	RAPGEF	fplx	FamilyOrComplex
+Rap1	RAP1	fplx	FamilyOrComplex
+Ras	RAS	fplx	FamilyOrComplex
+RasGAP	RasGAP	fplx	FamilyOrComplex
+Replication protein A	RPA	fplx	FamilyOrComplex
+S100A	S100A	fplx	FamilyOrComplex
+S6K	P70S6K	fplx	FamilyOrComplex
+SAA	SAA	fplx	FamilyOrComplex
+SAPK	JNK	fplx	FamilyOrComplex
+SERCA	SERCA	fplx	FamilyOrComplex
+SFK	SRC	fplx	FamilyOrComplex
+SHC	SHC	fplx	FamilyOrComplex
+SIK	SIK	fplx	FamilyOrComplex
+SMC1	SMC1	fplx	FamilyOrComplex
+SOD	SOD	fplx	FamilyOrComplex
+SPRY	SPRY	fplx	FamilyOrComplex
+STAT	STAT	fplx	FamilyOrComplex
+STAT5	STAT5	fplx	FamilyOrComplex
+STT3	STT3	fplx	FamilyOrComplex
+SUR	Sulfonylurea_receptor	fplx	FamilyOrComplex
+Shc	SHC	fplx	FamilyOrComplex
+Smc1	SMC1	fplx	FamilyOrComplex
+Sphingosine 1-phosphate receptor	S1PR	fplx	FamilyOrComplex
+Stearoyl-CoA desaturase	SCD	fplx	FamilyOrComplex
+TAP	TAP	fplx	FamilyOrComplex
+TCF	TCF_LEF	fplx	FamilyOrComplex
+TCR	TCR	fplx	FamilyOrComplex
+TFIIE	GTF2E	fplx	FamilyOrComplex
+TFIIF	GTF2F	fplx	FamilyOrComplex
+TGF-beta	TGFB	fplx	FamilyOrComplex
+TGFB	TGFB	fplx	FamilyOrComplex
+TGFbeta	TGFB	fplx	FamilyOrComplex
+TN-C	Troponin_C	fplx	FamilyOrComplex
+TORC1	mTORC1	fplx	FamilyOrComplex
+TORC2	mTORC2	fplx	FamilyOrComplex
+TSC	TSC	fplx	FamilyOrComplex
+TUBA	TUBA	fplx	FamilyOrComplex
+TUBB	TUBB	fplx	FamilyOrComplex
+Tenascin	TN	fplx	FamilyOrComplex
+Thioredoxin	TXN	fplx	FamilyOrComplex
+Thioredoxin reductase	TXNRD	fplx	FamilyOrComplex
+Transcription factor AP-2	TFAP2	fplx	FamilyOrComplex
+Tryptase	Tryptase	fplx	FamilyOrComplex
+UBE2	UBE2	fplx	FamilyOrComplex
+UGT	UGT	fplx	FamilyOrComplex
+Ubiquitin	Ubiquitin	fplx	FamilyOrComplex
+VEGF	VEGF	fplx	FamilyOrComplex
+VEGFR	VEGFR	fplx	FamilyOrComplex
+Vav	VAV	fplx	FamilyOrComplex
+WNT5	Wnt5	fplx	FamilyOrComplex
+Wnt	Wnt	fplx	FamilyOrComplex
+Wnt5	Wnt5	fplx	FamilyOrComplex
+XYLT	GCNT	fplx	FamilyOrComplex
+Xylosyltransferase	GCNT	fplx	FamilyOrComplex
+actin filament	Actin	fplx	FamilyOrComplex
+activin	Activin	fplx	FamilyOrComplex
+cPLA2	PLA2	fplx	FamilyOrComplex
+cTnT	Troponin_T	fplx	FamilyOrComplex
+cadherin	Cadherin	fplx	FamilyOrComplex
+eIF4A	EIF4A	fplx	FamilyOrComplex
+eIF4G	EIF4G	fplx	FamilyOrComplex
+eotaxin	Eotaxin	fplx	FamilyOrComplex
+hAxin	AXIN	fplx	FamilyOrComplex
+kinetochore	Kinetochore	fplx	FamilyOrComplex
+kinetochores	Kinetochore	fplx	FamilyOrComplex
+p110	PI3K_p110	fplx	FamilyOrComplex
+p38	p38	fplx	FamilyOrComplex
+p38 MAPK	p38	fplx	FamilyOrComplex
+p85	PI3K_p85	fplx	FamilyOrComplex
+porin	Porins	fplx	FamilyOrComplex
+stearoyl-CoA desaturase	SCD	fplx	FamilyOrComplex
+thioredoxin	TXN	fplx	FamilyOrComplex
+ubiquitin	Ubiquitin	fplx	FamilyOrComplex
