@@ -1,11 +1,9 @@
 import os
 import requests
 
-# NOTE: this URL should be updated once the reach_export branch is merged
-base_url = ('https://raw.githubusercontent.com/bgyori/famplex/reach_export/'
+base_url = ('https://raw.githubusercontent.com/sorgerlab/famplex/master/'
             'export/')
 famplex_groundings = 'famplex_groundings.tsv'
-famplex_overrides = 'famplex_grounding_overrides.tsv'
 
 
 def get_real_lines(fname):
@@ -48,7 +46,7 @@ def extend_overrides(override_fname, overrides):
         idx = lines.index('# FamPlex overrides')
     except ValueError:
         idx = None
-    lines_out = lines[:idx+1] if idx else lines
+    lines_out = lines[:idx+2] if idx else lines
     # Add comment block if it is not already there
     lines_out += [] if idx else ['#', '# FamPlex overrides', '#']
     lines_out += ['\t'.join(l) for l in overrides]
@@ -65,18 +63,22 @@ if __name__ == '__main__':
     groundings_fname = os.path.join(kb_dir, 'famplex.tsv')
     override_fname = os.path.join(kb_dir, 'NER-Grounding-Override.tsv')
 
+    groundings_rows = [line.strip().split('\t') for line in
+                       requests.get(base_url +
+                                    famplex_groundings).text.split('\n')]
+
     # Download and write to groundings file
     with open(groundings_fname, 'w') as fh:
-        fh.write(requests.get(base_url + famplex_groundings).text)
+        for line in groundings_rows:
+            if line[2] == 'fplx':
+                fh.write('%s\t%s\n' % (line[0], line[1]))
 
     # Now get all the "other" strings so we can figure out what to add
     # to the overrides file
     other_strings = get_other_strings(os.path.join(here, os.pardir,
                                       'ner_kb.config'))
 
-    overrides_rows = \
-        [row.split('\t') for row in
-         requests.get(base_url + famplex_overrides).text.split('\n')]
-    overrides = get_overrides(overrides_rows, other_strings, famplex_only=True)
+    overrides = get_overrides(groundings_rows, other_strings,
+                              famplex_only=True)
 
     extend_overrides(override_fname, overrides)
