@@ -35,7 +35,7 @@ def get_overrides(overrides_rows, other_strings, famplex_only=True):
         # If this is not an actual override, skip it
         if txt not in other_strings:
             continue
-        overrides.append((txt, db_id, db_ns, type))
+        overrides.append((txt, db_id, '', db_ns, type))
     return overrides
 
 
