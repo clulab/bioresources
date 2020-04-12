@@ -204,10 +204,8 @@ PDL1L1	Q9NZQ7		uniprot	Gene_or_gene_product
 PDPK1	O55173		uniprot	Gene_or_gene_product
 PKCTHETA	Q04759		uniprot	Gene_or_gene_product
 PKCa	P17252		uniprot	Gene_or_gene_product
-PP2A	PPP2		fplx	Family
 PTEN	P60484		uniprot	Gene_or_gene_product
 PTF1A	Q7RTS3		uniprot	Gene_or_gene_product
-Peroxiredoxin	PRDX		fplx	Family
 RAGE	Q15109		uniprot	Gene_or_gene_product
 RASA1	P20936		uniprot	Gene_or_gene_product
 RASA2	Q15283		uniprot	Gene_or_gene_product
@@ -218,7 +216,6 @@ RPS6KA1	Q15418		uniprot	Gene_or_gene_product
 Rb	P06400		uniprot	Gene_or_gene_product
 Ref1	P27695		uniprot	Gene_or_gene_product
 RhoC	P08134		uniprot	Gene_or_gene_product
-SAPK	JNK		fplx	Family
 SMAD3	P84022		uniprot	Gene_or_gene_product
 SOS1	Q07889		uniprot	Gene_or_gene_product
 STAT1	P42224		uniprot	Gene_or_gene_product
@@ -226,7 +223,6 @@ STAT1gene	P42224		uniprot	Gene_or_gene_product
 STAT1rna	P42224		uniprot	Gene_or_gene_product
 STAT3	P40763		uniprot	Gene_or_gene_product
 TAK1	O43318		uniprot	Gene_or_gene_product
-TCR	TCR		fplx	Family
 TGFb1	P01137		uniprot	Gene_or_gene_product
 TGFbR	P36897		uniprot	Gene_or_gene_product
 TIGAR	Q9NQ88		uniprot	Gene_or_gene_product
@@ -237,7 +233,6 @@ TNFaR	P19438		uniprot	Gene_or_gene_product
 TNR1A	P19438		uniprot	Gene_or_gene_product
 TRAF2	Q12933		uniprot	Gene_or_gene_product
 TSC2	P49815		uniprot	Gene_or_gene_product
-Thioredoxin	TXN		fplx	Family
 Trop2	P09758		uniprot	Gene_or_gene_product
 Tyk2	P29597		uniprot	Gene_or_gene_product
 cIAP-1	Q13490		uniprot	Gene_or_gene_product
@@ -301,7 +296,6 @@ RPS6KA	UAZ-PF-205		uaz	Family
 RPS6KB	UAZ-PF-206		uaz	Family
 Sulfonylurea Receptor	UAZ-PF-2		uaz	Family
 TCF/LEF	UAZ-PF-224		uaz	Family
-TGFB	TGFB		fplx	Family
 Alanine	UAZ-S-001		uaz	Site
 Ala	UAZ-S-001		uaz	Site
 Arginine	UAZ-S-002		uaz	Site
