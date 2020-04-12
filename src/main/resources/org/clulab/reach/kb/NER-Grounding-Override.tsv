@@ -37,7 +37,7 @@ EHT1864	9938202		pubchem	Simple_chemical
 estradiol	5757		pubchem	Simple_chemical
 estrone	5870		pubchem	Simple_chemical
 Ethyl Methanesulfonate	6113		pubchem	Simple_chemical
-glucose	HMDB06564		hmdb	Simple_chemical
+glucose	HMDB0000122		hmdb	Simple_chemical
 GDP	8977		pubchem	Simple_chemical
 GSH	124886		pubchem	Simple_chemical
 GTP	6830		pubchem	Simple_chemical
