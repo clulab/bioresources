@@ -37,14 +37,14 @@ EHT1864	9938202		pubchem	Simple_chemical
 estradiol	5757		pubchem	Simple_chemical
 estrone	5870		pubchem	Simple_chemical
 Ethyl Methanesulfonate	6113		pubchem	Simple_chemical
-glucose	HMDB0000122		hmdb	Simple_chemical
+glucose	CHEBI:17234		chebi	Simple_chemical
 GDP	8977		pubchem	Simple_chemical
 GSH	124886		pubchem	Simple_chemical
 GTP	6830		pubchem	Simple_chemical
 hexabromocyclododecane	18529		pubchem	Simple_chemical
 HNHA	16126782		pubchem	Simple_chemical
-hydrogen peroxide	HMDB01377		hmdb	Simple_chemical
-Lactate	HMDB00190		hmdb	Simple_chemical
+hydrogen peroxide	784		pubchem	Simple_chemical
+Lactate	91435		pubchem	Simple_chemical
 LPA	16219586		pubchem	Simple_chemical
 manumycin	6438330		pubchem	Simple_chemical
 manumycin A	6438330		pubchem	Simple_chemical
@@ -54,9 +54,9 @@ Mubritinib	644692		pubchem	Simple_chemical
 NADPH	22833512		pubchem	Simple_chemical
 Neocarzinostatin	5282473		pubchem	Simple_chemical
 Nutlin	216345		pubchem	Simple_chemical
-oxygen	HMDB01377		hmdb	Simple_chemical
+oxygen	977		pubchem	Simple_chemical
 phenylhydroquinone	14116		pubchem	Simple_chemical
-PIP3	HMDB10147		hmdb	Simple_chemical
+PIP3	CHEBI:60169		chebi	Simple_chemical
 pirinixic acid	5694		pubchem	Simple_chemical
 P6	5494425		pubchem	Simple_chemical
 RO-31-7549	2403		pubchem	Simple_chemical
@@ -67,7 +67,7 @@ ROSsox	5359597		pubchem	Simple_chemical
 Salirasib	5469318		pubchem	Simple_chemical
 Sorafenib	216239		pubchem	Simple_chemical
 Stattic	2779853		pubchem	Simple_chemical
-superoxide	HMDB02168		hmdb	Simple_chemical
+superoxide	5359597		pubchem	Simple_chemical
 Zinostatin	5282473		pubchem	Simple_chemical
 AcidicME	GO:0045851		go	BioProcess
 DNAdsb	D053903		mesh	BioProcess

@@ -13,7 +13,7 @@ resolve it to keep a single valid override.
 import os
 import requests
 
-base_url = 'https://raw.githubusercontent.com/bgyori/famplex/91a56c4b01c470ce83c7dd7bb53f418cbf294767/'
+base_url = 'https://raw.githubusercontent.com/bgyori/famplex/reach_export/'
 
 
 def get_non_fplx_overrides():
