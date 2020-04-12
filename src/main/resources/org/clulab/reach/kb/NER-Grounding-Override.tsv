@@ -251,42 +251,21 @@ p110alpha	P42336		uniprot	Gene_or_gene_product
 p110beta	P42338		uniprot	Gene_or_gene_product
 p110delta	O00329		uniprot	Gene_or_gene_product
 pS6	P62753		uniprot	Gene_or_gene_product
-14-3-3	PF00244		pfam	Family
 Acetyl-CoA Synthetase	UAZ-PF-4		uaz	Family
-ACOX	PF01756		pfam	Family
 ACT	PF01842		pfam	Family
-BMP	PF02608		pfam	Family
-Cadherin	PF00028		pfam	Family
 CASP	UAZ-PF-32		uaz	Family
 CCNA	UAZ-PF-34		uaz	Family
 CCND	UAZ-PF-35		uaz	Family
 CCNE	UAZ-PF-36		uaz	Family
 CDH	PF02611		pfam	Family
 Chemokine Receptor	UAZ-PF-43		uaz	Family
-COX4	PF02936		pfam	Family
-COX6A	PF02046		pfam	Family
-COX6B	PF02297		pfam	Family
-COX7A	PF02238		pfam	Family
-COX7B	PF05392		pfam	Family
-COX8	PF02285		pfam	Family
-CRISP	PF08562		pfam	Family
 Cu-Zn SOD	UAZ-PF-217		uaz	Family
 CXCL ELR-Negative	UAZ-PF-61		uaz	Family
 CXCL ELR-Positive	UAZ-PF-62		uaz	Family
-DDR	PF08841		pfam	Family
-DVL	PF08137		pfam	Family
 EGFR Ligand	UAZ-PF-72		uaz	Family
 EGFR/ERBB	UAZ-PF-73		uaz	Family
 Ephrin Receptor	UAZ-PF-79		uaz	Family
-ETS	PF00178		pfam	Family
-FGF	PF00167		pfam	Family
-FLOT	PF15975		pfam	Family
-G protein alpha	PF00503		pfam	Family
-G-protein alpha	PF00503		pfam	Family
-Galpha	PF00503		pfam	Family
-G alpha	PF00503		pfam	Family
 GAS6 Receptor	UAZ-PF-90		uaz	Family
-GATA	PF00320		pfam	Family
 GNA Gq	UAZ-PF-92		uaz	Family
 GNA Gs	UAZ-PF-93		uaz	Family
 GNAI	UAZ-PF-94		uaz	Family
@@ -300,39 +279,27 @@ Histone H2B	UAZ-PF-112		uaz	Family
 Histone H3	UAZ-PF-113		uaz	Family
 Histone H4	UAZ-PF-114		uaz	Family
 HLA-DR	UAZ-PF-115		uaz	Family
-HSP90	PF00183		pfam	Family
-IGFBP	PF00219		pfam	Family
-IL1	PF00340		pfam	Family
-IRS	PF02174		pfam	Family
 MAF	PF02545		pfam	Family
 MAPK Erk1/3	UAZ-PF-133		uaz	Family
 MAPK JNK	UAZ-PF-134		uaz	Family
 MAPK1/3	UAZ-PF-133		uaz	Family
 MAPK1/MAPK3	UAZ-PF-133		uaz	Family
 MAPK3/MAPK1	UAZ-PF-133		uaz	Family
-neuregulin	PF02158		pfam	Family
-neuroregulin	PF02158		pfam	Family
-NOTCH	PF00066		pfam	Family
 p100	PF00794		pfam	Family
 p160/SRC	UAZ-PF-144		uaz	Family
 PIK3C Class IA	UAZ-PF-168		uaz	Family
 PIK3R Class IA	UAZ-PF-169		uaz	Family
-PKI	PF02827		pfam	Family
 PPP2R Subunit A	UAZ-PF-182		uaz	Family
 PPP2R Subunit B	UAZ-PF-183		uaz	Family
 PRKA	PF06798		pfam	Family
 PRKAA	UAZ-PF-189		uaz	Family
 PRKAB	UAZ-PF-190		uaz	Family
 PRKAG	UAZ-PF-191		uaz	Family
-RAS	PF00071		pfam	Family
-RasGAP	PF00616		pfam	Family
-RasGAPs	PF00616		pfam	Family
 RB domain	PF02196		pfam	Family
 RB-domain	PF02196		pfam	Family
 RBD	PF02196		pfam	Family
 RPS6KA	UAZ-PF-205		uaz	Family
 RPS6KB	UAZ-PF-206		uaz	Family
-SAA	PF00277		pfam	Family
 Sulfonylurea Receptor	UAZ-PF-2		uaz	Family
 TCF/LEF	UAZ-PF-224		uaz	Family
 TGFB	IPR015615		interpro	Family
