@@ -58,3 +58,25 @@ if __name__ == '__main__':
     non_fplx_overrides = get_non_fplx_overrides()
     fplx_groundings = get_fplx_groundings()
     pf_to_fplx_mappings = get_fplx_pf_mappings()
+
+    add_to_fplx = []
+    remove_override = []
+    compare_override = []
+    for txt, override in non_fplx_overrides.items():
+        fplx_grounding = fplx_groundings.get(txt)
+        if override[2] == 'pfam':
+            fplx_mapping = pf_to_fplx_mappings.get(override[0])
+            if fplx_mapping:
+                if txt not in fplx_groundings:
+                    add_to_fplx.append((txt, 'FPLX', fplx_mapping))
+                else:
+                    remove_override.append((txt, override, fplx_grounding))
+        else:
+            if fplx_grounding:
+                # This is the case when it's a matching grounding
+                if override[2] == fplx_grounding[1]:
+                    if override[0] == fplx_grounding[0]:
+                        continue
+
+                compare_override.append((txt, override, fplx_grounding))
+
