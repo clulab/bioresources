@@ -245,57 +245,55 @@ p110alpha	P42336		uniprot	Gene_or_gene_product
 p110beta	P42338		uniprot	Gene_or_gene_product
 p110delta	O00329		uniprot	Gene_or_gene_product
 pS6	P62753		uniprot	Gene_or_gene_product
-Acetyl-CoA Synthetase	UAZ-PF-4		uaz	Family
+Acetyl-CoA Synthetase	Acetyl_CoA_synthetase		fplx	Family
 ACT	PF01842		pfam	Family
-CASP	UAZ-PF-32		uaz	Family
-CCNA	UAZ-PF-34		uaz	Family
-CCND	UAZ-PF-35		uaz	Family
-CCNE	UAZ-PF-36		uaz	Family
-CDH	PF02611		pfam	Family
-Chemokine Receptor	UAZ-PF-43		uaz	Family
-Cu-Zn SOD	UAZ-PF-217		uaz	Family
-CXCL ELR-Negative	UAZ-PF-61		uaz	Family
-CXCL ELR-Positive	UAZ-PF-62		uaz	Family
-EGFR Ligand	UAZ-PF-72		uaz	Family
-EGFR/ERBB	UAZ-PF-73		uaz	Family
-Ephrin Receptor	UAZ-PF-79		uaz	Family
-GAS6 Receptor	UAZ-PF-90		uaz	Family
-GNA Gq	UAZ-PF-92		uaz	Family
-GNA Gs	UAZ-PF-93		uaz	Family
-GNAI	UAZ-PF-94		uaz	Family
-GNB	UAZ-PF-95		uaz	Family
-GNG	UAZ-PF-96		uaz	Family
-HDAC Class I	UAZ-PF-105		uaz	Family
-HDAC Class II	UAZ-PF-106		uaz	Family
-Histone H1	UAZ-PF-110		uaz	Family
-Histone H2A	UAZ-PF-111		uaz	Family
-Histone H2B	UAZ-PF-112		uaz	Family
-Histone H3	UAZ-PF-113		uaz	Family
-Histone H4	UAZ-PF-114		uaz	Family
-HLA-DR	UAZ-PF-115		uaz	Family
-MAF	PF02545		pfam	Family
-MAPK Erk1/3	UAZ-PF-133		uaz	Family
-MAPK JNK	UAZ-PF-134		uaz	Family
-MAPK1/3	UAZ-PF-133		uaz	Family
-MAPK1/MAPK3	UAZ-PF-133		uaz	Family
-MAPK3/MAPK1	UAZ-PF-133		uaz	Family
-p100	PF00794		pfam	Family
-p160/SRC	UAZ-PF-144		uaz	Family
-PIK3C Class IA	UAZ-PF-168		uaz	Family
-PIK3R Class IA	UAZ-PF-169		uaz	Family
-PPP2R Subunit A	UAZ-PF-182		uaz	Family
-PPP2R Subunit B	UAZ-PF-183		uaz	Family
-PRKA	PF06798		pfam	Family
-PRKAA	UAZ-PF-189		uaz	Family
-PRKAB	UAZ-PF-190		uaz	Family
-PRKAG	UAZ-PF-191		uaz	Family
+CASP	Caspase		fplx	Family
+CCNA	Cyclin_A		fplx	Family
+CCND	Cyclin_D		fplx	Family
+CCNE	Cyclin_E		fplx	Family
+Chemokine Receptor	Chemokine_receptor		fplx	Family
+Cu-Zn SOD	SOD		fplx	Family
+CXCL ELR-Negative	CXCL_ELR_negative		fplx	Family
+CXCL ELR-Positive	CXCL_ELR_positive		fplx	Family
+EGFR Ligand	EGFR_ligand		fplx	Family
+EGFR/ERBB	ERBB		fplx	Family
+Ephrin Receptor	Ephrin_receptor		fplx	Family
+GAS6 Receptor	GAS6_receptor		fplx	Family
+GNA Gq	G_q_alpha		fplx	Family
+GNA Gs	G_s_alpha		fplx	Family
+GNAI	G_i_alpha		fplx	Family
+GNB	G_beta		fplx	Family
+GNG	G_gamma		fplx	Family
+HDAC Class I	HDAC_I		fplx	Family
+HDAC Class II	HDAC_II		fplx	Family
+Histone H1	Histone_H1		fplx	Family
+Histone H2A	Histone_H2A		fplx	Family
+Histone H2B	Histone_H2B		fplx	Family
+Histone H3	Histone_H3		fplx	Family
+Histone H4	Histone_H4		fplx	Family
+HLA-DR	HLA_DR		fplx	Family
+MAPK Erk1/3	ERK		fplx	Family
+MAPK JNK	JNK		fplx	Family
+MAPK1/3	ERK		fplx	Family
+MAPK1/MAPK3	ERK		fplx	Family
+MAPK3/MAPK1	ERK		fplx	Family
+p100	Q00653		uniprot	Gene_or_gene_product
+p160/SRC	NCOA		fplx	Family
+PIK3C Class IA	PI3K_p110		fplx	Family
+PIK3R Class IA	PIK3R_I		fplx	Family
+PPP2R Subunit A	PPP2R_A		fplx	Family
+PPP2R Subunit B	PPP2R_B		fplx	Family
+PRKA	PRKAC		fplx	Family
+PRKAA	AMPK_alpha		fplx	Family
+PRKAB	AMPK_beta		fplx	Family
+PRKAG	AMPK_gamma		fplx	Family
 RB domain	PF02196		pfam	Family
 RB-domain	PF02196		pfam	Family
 RBD	PF02196		pfam	Family
-RPS6KA	UAZ-PF-205		uaz	Family
-RPS6KB	UAZ-PF-206		uaz	Family
-Sulfonylurea Receptor	UAZ-PF-2		uaz	Family
-TCF/LEF	UAZ-PF-224		uaz	Family
+RPS6KA	P90RSK		fplx	Family
+RPS6KB	P70S6K		fplx	Family
+Sulfonylurea Receptor	Sulfonylurea_receptor		fplx	Family
+TCF/LEF	TCF_LEF		fplx	Family
 Alanine	UAZ-S-001		uaz	Site
 Ala	UAZ-S-001		uaz	Site
 Arginine	UAZ-S-002		uaz	Site
