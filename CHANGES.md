@@ -1,5 +1,6 @@
 #Changes
 =======
++ **1.1.31** - Improved overrides and fix outdated GO IDs.
 + **1.1.30** - Update all UniProt groundings. Add synonyms for human UniProt proteins from HGNC. Remove old BE groundings and overrides, and replace them with new FamPlex groundings and overrides.
 + **1.1.29** - Rerun processors 362171 with emoticon fix.
 + **1.1.28** - Rerun ner_kb.sh with update from 1.1.28.
