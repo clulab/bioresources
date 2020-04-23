@@ -6,7 +6,8 @@ from collections import Counter
 from indra.statements.resources import amino_acids
 
 
-exclude_list = {'protein'}
+exclude_list = {'protein', 'nucleotide', 'lipid',
+                'inhibitor', 'solution'}
 
 
 def get_synonyms(syns_entry):
