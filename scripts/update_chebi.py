@@ -7,7 +7,7 @@ from indra.statements.resources import amino_acids
 
 
 exclude_list = {'protein', 'nucleotide', 'lipid',
-                'inhibitor', 'solution'}
+                'inhibitor', 'solution', 'M2'}
 
 
 def get_synonyms(syns_entry):
