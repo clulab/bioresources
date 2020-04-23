@@ -6,6 +6,9 @@ from collections import Counter
 from indra.statements.resources import amino_acids
 
 
+exclude_list = {'protein'}
+
+
 def get_synonyms(syns_entry):
     synonyms = []
     for synonym in syns_entry:
@@ -36,6 +39,10 @@ def ambig_aa_filter(name, txt):
     return True
 
 
+def filter_exclude_list(txt):
+    return txt not in exclude_list
+
+
 aa_abbrevs = {aa['short_name'].capitalize() for aa in amino_acids.values()}
 
 
@@ -47,7 +54,7 @@ def is_aa_sequence(txt):
 
 def accept_entry(name, synonym):
     return length_filter(synonym) and character_filter(synonym) and \
-        ambig_aa_filter(name, synonym)
+        ambig_aa_filter(name, synonym) and filter_exclude_list(synonym)
 
 
 if __name__ == '__main__':
