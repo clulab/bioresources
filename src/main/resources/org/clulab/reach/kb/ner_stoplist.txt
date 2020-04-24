@@ -62,8 +62,8 @@ legs
 light
 link
 links
-m 2
-m2
+#m 2 -- removed because it overlaps with M2, a Site
+#m2 -- removed because it overlaps with M2, a Site
 mark
 matrix
 neck
