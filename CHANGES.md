@@ -1,6 +1,6 @@
 #Changes
 =======
-+ **1.1.32** - Bio processes, ChEBI, better stop words.
++ **1.1.32** - UP has been updated, GO significantly extended and updated, CHEBI restored and updated, and HGNC added as a source of synonyms for human proteins in UP. Better stop words. 
 + **1.1.31** - Improved overrides and fix outdated GO IDs.
 + **1.1.30** - Update all UniProt groundings. Add synonyms for human UniProt proteins from HGNC. Remove old BE groundings and overrides, and replace them with new FamPlex groundings and overrides.
 + **1.1.29** - Rerun processors 362171 with emoticon fix.
