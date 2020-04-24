@@ -10,6 +10,17 @@ import obonet
 from collections import defaultdict
 
 
+exclude_list = {'behavior', 'behaviour', 'breakdown', 'cis-autophosphorylation',
+                'degradation', 'demethylation', 'dephosphorylation',
+                'depurination', 'depyrimidination', 'desumoylation',
+                'deubiquitination', 'excretion', 'flight', 'glycosylation',
+                'growth', 'localisation', 'localization', 'memory',
+                'phosphorylation', 'prenylation', 'rhythm', 'secretion',
+                'signaling', 'signalling', 'sumoylation', 'transcription',
+                'transactivation', 'trans-autophosphorylation', 'translation',
+                }
+
+
 def get_synonyms(syns_entry):
     """Return synonyms for a given entry."""
     synonyms = []
@@ -26,6 +37,10 @@ def length_filter(txt):
     # We filter out single-character names and names that are very long
     # and so are unlikely to be ever found in text
     return 2 <= len(txt) <= 50
+
+
+def filter_exclude_list(txt):
+    return txt not in exclude_list
 
 
 def read_manual_entries():
@@ -61,7 +76,7 @@ if __name__ == '__main__':
             continue
         synonyms = get_synonyms(data.get('synonym', []))
         entries += [(txt, node, '', 'go') for txt in ([name] + synonyms)
-                    if length_filter(txt)]
+                    if (length_filter(txt) and filter_exclude_list(txt))]
 
     # Here we sort out redundancies between old and new entries and add old
     # ones only if they are not redundant
