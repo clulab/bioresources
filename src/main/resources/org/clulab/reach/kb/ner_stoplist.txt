@@ -53,7 +53,7 @@ hips
 impact
 injury
 ir
-k 2
+#k 2  -- removed because it overlaps with K2, a Site
 knee
 knees
 lead
