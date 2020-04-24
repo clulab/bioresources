@@ -5,7 +5,7 @@
 -II
 -III
 Bark
-II
+#II --  removed because it overlaps with Ii, a valid protein synonym
 Rod
 Scott
 Task
