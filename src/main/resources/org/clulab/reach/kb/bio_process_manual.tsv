@@ -248,3 +248,17 @@ translation	GO:0006412		go
 transport	GO:0006810		go
 tricarboxylic acid cycle	GO:0006099		go
 tumor microenvironment	D059016		mesh
+DSB	D053903		mesh
+G 2	D016195		mesh
+H/R	D015687		mesh
+I/R	D015427		mesh
+DSB	D053903		mesh
+ischemia	D007511		mesh
+tumorigenesis	D063646		mesh
+chromosomal instability	D043171		mesh
+CIN	D043171		mesh
+tumorigenesis	D063646		mesh
+neuronal migration	D054081		mesh
+Ischemia-reperfusion	D015427		mesh
+cSBP	D001794		mesh
+ER stress	D059865		mesh
