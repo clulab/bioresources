@@ -61,7 +61,7 @@ if __name__ == '__main__':
             continue
         synonyms = get_synonyms(data.get('synonym', []))
         entries += [(txt, node, '', 'go') for txt in ([name] + synonyms)
-                    if length_filter(name, txt)]
+                    if length_filter(txt)]
 
     # Here we sort out redundancies between old and new entries and add old
     # ones only if they are not redundant
