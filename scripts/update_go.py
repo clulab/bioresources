@@ -15,9 +15,11 @@ exclude_list = {'behavior', 'behaviour', 'breakdown', 'cis-autophosphorylation',
                 'depurination', 'depyrimidination', 'desumoylation',
                 'deubiquitination', 'excretion', 'flight', 'glycosylation',
                 'growth', 'localisation', 'localization', 'memory',
-                'phosphorylation', 'prenylation', 'rhythm', 'secretion',
-                'signaling', 'signalling', 'sumoylation', 'transcription',
-                'transactivation', 'trans-autophosphorylation', 'translation',
+                'methylation'
+                'phosphorylation', 'polyubiquitin', 'prenylation', 'rhythm',
+                'secretion', 'signaling', 'signalling', 'sumoylation',
+                'transcription', 'transactivation', 'trans-autophosphorylation',
+                'translation',
                 }
 
 
