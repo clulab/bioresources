@@ -65,7 +65,7 @@ if __name__ == '__main__':
     here = os.path.dirname(os.path.abspath(__file__))
     kb_dir = os.path.join(here, os.pardir, 'src', 'main', 'resources', 'org',
                           'clulab', 'reach', 'kb')
-    resource_fname = os.path.join(kb_dir, 'mesh_disease.tsv')
+    resource_fname = os.path.join(kb_dir, 'mesh-disease.tsv')
 
     et = load_mesh_resource_file()
     mesh_names = get_mesh_names(et)
