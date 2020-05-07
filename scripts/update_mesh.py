@@ -27,6 +27,9 @@ def get_mesh_names(et):
     for record in et.iterfind('DescriptorRecord'):
         # We first get the ID and the name
         uid = record.find('DescriptorUI').text
+        # Remove entries that we classify as bioprocesses
+        if uid in bioprocess_filter:
+            continue
         tree_numbers = record.findall('TreeNumberList/TreeNumber')
         # Diseases are in the C subtree
         if not any(t.text[0] == 'C' for t in tree_numbers):
@@ -34,6 +37,9 @@ def get_mesh_names(et):
         name = record.find('DescriptorName/String').text
         synonyms = _get_term_names(record, name)
         names[uid] = [name] + synonyms
+    # Add some manual mappings
+    for synonym, uid in manual_add:
+        names[uid].append(synonym)
     return names
 
 
@@ -58,6 +64,21 @@ def load_mesh_resource_file():
         print('Parsing MeSH descriptors')
         et = ET.parse(desc_file)
     return et
+
+
+# These IDs appear in bio_process.tsv and are better classified as
+# biological processes (they are both under the C and the G MeSH tree).
+bioprocess_filter = {'D043171', 'D042822'}
+
+# These were in bio_process.tsv, are actually diseases, but these synonyms
+# aren't provided by MeSH so we add them here
+manual_add = [('infiltration', 'D009361'),
+              ('invasion', 'D009361'),
+              ('invasiveness', 'D009361'),
+              ('I/R', 'D015427'),
+              ('ischemia', 'D007511'),
+              ('Ischemia-reperfusion', 'D015427'),
+              ('tumorigenesis', 'D063646')]
 
 
 if __name__ == '__main__':
