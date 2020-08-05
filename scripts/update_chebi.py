@@ -5,9 +5,8 @@ import obonet
 from collections import Counter
 from indra.statements.resources import amino_acids
 
-
-exclude_list = {'protein', 'nucleotide', 'lipid',
-                'inhibitor', 'solution', 'M2'}
+with open('chebi_exclude.txt', 'r') as fh:
+    exclude_list = {l.strip() for l in fh.readlines()}
 
 
 def get_synonyms(syns_entry):
