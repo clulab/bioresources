@@ -7,10 +7,6 @@ from indra.statements.resources import amino_acids
 from collections import Counter
 
 
-# with open('chebi_exclude.txt', 'r') as fh:
-#     exclude_list = {l.strip() for l in fh.readlines()}
-
-
 def get_synonyms(syns_entry):
     synonyms = []
     for synonym in syns_entry:
@@ -45,20 +41,18 @@ def mod_filter(txt):
     return "MOD:" not in txt
 
 
-# def filter_exclude_list(txt):
-#     return txt not in exclude_list
-
-
 aa_abbrevs = {aa['short_name'].capitalize() for aa in amino_acids.values()}
 
 
 def is_aa_sequence(txt):
+
     # Return True if the given text is a sequence of amino acids like Tyr-Glu.
     return ('-' in txt) and (all(part in aa_abbrevs
                                  for part in txt.split('-')))
 
 
 def is_derived_from(pro_id, data):
+
     relationship = data.get('relationship')
 
     if relationship is None:
@@ -69,10 +63,11 @@ def is_derived_from(pro_id, data):
 
     return re.match(r'PR:', pro_id) and re.match(r'derives\_from PR:', relationship)
 
+
 def is_cleavage_and_modification(data):
+
     comments = data.get('comment')
     definition = data.get('def')
-    #print(comments, definition)
 
     if comments is None or definition is None:
         return False
@@ -104,9 +99,7 @@ if __name__ == '__main__':
     here = os.path.dirname(os.path.abspath(__file__))
     kb_dir = os.path.join(here, os.pardir, 'src', 'main', 'resources', 'org',
                           'clulab', 'reach', 'kb')
-    resource_fname = os.path.join(kb_dir, 'protein_ontology.tsv')
-
-    print("Now loading ")
+    resource_fname = os.path.join(kb_dir, 'protein-ontology-fragments.tsv')
 
     # Download Protein Ontology resource file
     url = 'https://proconsortium.org/download/current/pro_reasoned.obo'
@@ -114,10 +107,7 @@ if __name__ == '__main__':
     allowed_synonyms = {'EXACT', 'RELATED'}
     entries = []
 
-    print("Loaded data")
-
     for node, data in g.nodes(data=True):
-
         name = data['name']
         pro_id = node
         raw_synonyms = data.get('synonym', [])
