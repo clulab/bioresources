@@ -114,13 +114,14 @@ if __name__ == '__main__':
 
         synonyms = get_synonyms(raw_synonyms)
 
-        entries += [(name, pro_id, txt) for txt in ([name] + synonyms)
+        # Format of the output defined here
+        entries += [(txt, pro_id) for txt in ([name] + synonyms)
                     if accept_entry(name, txt, pro_id, data)]
 
     # We sort the entries first by the synonym but in a way that special
     # characters and capitalization is ignored, then sort by ID
     entries = sorted(entries, key=(lambda x:
-                                   (re.sub('[^A-Za-z0-9]', '', x[2]).lower(),
+                                   (re.sub('[^A-Za-z0-9]', '', x[0]).lower(),
                                     x[1])))
 
     # Now dump the entries into an updated TSV file
