@@ -31,24 +31,8 @@ def character_filter(txt):
     return num_special_chars < 6
 
 
-def ambig_aa_filter(name, txt):
-    if is_aa_sequence(name) and re.match(r'(^[A-Z-]+$)', txt):
-        return False
-    return True
-
-
 def mod_filter(txt):
     return "MOD:" not in txt
-
-
-aa_abbrevs = {aa['short_name'].capitalize() for aa in amino_acids.values()}
-
-
-def is_aa_sequence(txt):
-
-    # Return True if the given text is a sequence of amino acids like Tyr-Glu.
-    return ('-' in txt) and (all(part in aa_abbrevs
-                                 for part in txt.split('-')))
 
 
 def is_derived_from(pro_id, data):
@@ -79,7 +63,7 @@ def accept_entry(name, synonym, pro_id, data):
 
     # Sanity check filters
     if not (length_filter(synonym) and character_filter(synonym) and \
-            ambig_aa_filter(name, synonym) and mod_filter(synonym)):
+            mod_filter(synonym)):
         return False
 
     # Finds guaranteed protein cleavages from relationship tag
