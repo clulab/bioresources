@@ -36,16 +36,21 @@ def mod_filter(txt):
 
 
 def is_derived_from(pro_id, data):
-
-    relationship = data.get('relationship')
-
-    if relationship is None:
+    if not re.match(r'^PR:(\d+)$', pro_id):
         return False
 
-    if isinstance(relationship, list):
-        relationship = relationship[0]
+    relationship = data.get('relationship', [])
+    if any(re.match(r'derives\_from PR:', rel) for rel in relationship):
+        return True
+    return False
 
-    return re.match(r'PR:', pro_id) and re.match(r'derives\_from PR:', relationship)
+
+def isa_cleavage_product(pro_id, data, g):
+    isa = data.get('is_a', [])
+    for node_id in isa:
+        if 'proteolytic cleavage product' in g.nodes[node_id]['name']:
+            return True
+    return False
 
 
 def is_cleavage_and_modification(data):
@@ -71,12 +76,19 @@ def accept_entry(name, synonym, pro_id, data):
     if re.match(r'^([^/]+)/(ClvPrd|UnMod|iso:\d+/UnMod)$', synonym):
         return False
 
+    # Remove synonyms like UniProtKB:P0DTD1, 5325-5925
+    if re.match(r'^UniProtKB:([^ ]+)', synonym):
+        return False
+
     # Finds guaranteed protein cleavages from relationship tag
     if is_derived_from(pro_id, data):
         return True
 
     # Experimental Filter for finding additional cleavages
     if is_cleavage_and_modification(data):
+        return True
+
+    if isa_cleavage_product(pro_id, data, g):
         return True
 
     return False
