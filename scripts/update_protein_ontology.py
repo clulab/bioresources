@@ -2,7 +2,7 @@ import os
 import re
 import csv
 import obonet
-from indra.statements.resources import amino_acids
+import pickle
 
 from collections import Counter
 
@@ -66,6 +66,11 @@ def accept_entry(name, synonym, pro_id, data):
             mod_filter(synonym)):
         return False
 
+    # Remove entries like "YWHAB/ClvPrd", these are not useful
+    # synonyms
+    if re.match(r'^([^/]+)/(ClvPrd|UnMod|iso:\d+/UnMod)$', synonym):
+        return False
+
     # Finds guaranteed protein cleavages from relationship tag
     if is_derived_from(pro_id, data):
         return True
@@ -75,6 +80,19 @@ def accept_entry(name, synonym, pro_id, data):
         return True
 
     return False
+
+
+def read_cached_url(url, cache_file):
+    if not os.path.exists(cache_file):
+        print('Loading %s' % url)
+        g = obonet.read_obo(url)
+        with open(cache_file, 'wb') as fh:
+            pickle.dump(g, fh)
+        return g
+    else:
+        print('Loading %s' % cache_file)
+        with open(cache_file, 'rb') as fh:
+            return pickle.load(fh)
 
 
 if __name__ == '__main__':
@@ -87,7 +105,7 @@ if __name__ == '__main__':
 
     # Download Protein Ontology resource file
     url = 'https://proconsortium.org/download/current/pro_reasoned.obo'
-    g = obonet.read_obo(url)
+    g = read_cached_url(url, 'pro_obo.pkl')
     allowed_synonyms = {'EXACT', 'RELATED'}
     entries = []
 
