@@ -3,12 +3,14 @@ import re
 import csv
 import requests
 import itertools
+from protmapper.resources import _process_feature
 
 
 # Base URL for UniProt
 uniprot_url = 'http://www.uniprot.org/uniprot'
 # Get protein names, gene names and the organism
-columns = ['id', 'protein%20names', 'genes', 'organism']
+columns = ['id', 'protein%20names', 'genes', 'organism',
+           'feature(CHAIN)', 'feature(PEPTIDE)']
 # Only get reviewed entries and use TSV format
 params = {
     'sort': 'id',
@@ -21,7 +23,7 @@ params = {
 
 
 def process_row(row):
-    entry, protein_names, genes, organisms = row
+    entry, protein_names, genes, organisms, chains, peptides = row
     # Gene names are space separated
     gene_synonyms = genes.split(' ') if genes else []
     # We use a more complex function to parse protein synonyms which appear
@@ -53,6 +55,21 @@ def process_row(row):
         if len(gene.split(' ')) > 5:
             continue
         entries.append((gene, entry, organism))
+
+    chains = _process_feature('CHAIN', chains)
+    peptides = _process_feature('PEPTIDE', peptides)
+    for feature in chains + peptides:
+        # Skip fragments with no name or the same name as an entry name/synonym
+        if not feature.name or feature.name in {entry[0] for entry in entries}:
+            continue
+        # We skip synonyms that are more than 5 words in length (consistent
+        # with original KB construction).
+        if len(feature.name.split(' ')) > 5:
+            continue
+        feature_entry = '%s#%s' % (entry, feature.id)
+        for organism in organism_synonyms:
+            entries.append((feature.name, feature_entry, organism))
+
     return entries
 
 
