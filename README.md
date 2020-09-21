@@ -5,13 +5,25 @@ Data resources from the biomedical domain
 
 ### Extending grounding resource files
 The `src/main/resources/org/clulab/reach/kb` folder contains a number of
-tab separated value files which contain grounding entries. Several of these
-files have corresponding automated update scripts in the `scripts` folder.
-If an update script exists, the corresponding file should not be manually
-edited, rather, changes should be integrated by changing and running the
-script. Note that the files are version-controlled in a gzipped form and
+tab separated value (TSV) files which contain grounding entries. Several of
+these files have corresponding automated update scripts in the `scripts`
+folder.  If an update script exists, the corresponding TSV file should not be
+manually edited, rather, changes should be integrated by changing and running
+the script.
+
+Most TSV files contain primary grounding entries from a given source.
+Additionally, the `NER-Grounding-Override.tsv` file contains manually curated
+groundings that are used to apply overrides.
+
+Note that the files are version-controlled in a gzipped form and
 therefore need to be decompressed for editing and then compressed again
 for checking in to version control.
+
+Note also that if a new TSV file or a new entity type needs to be added. it
+requires corresponding changes in several places in the Reach code base. For an
+example of changes that needed to be made in Reach when adding
+`mesh_disease.tsv` to bioresources, see
+https://github.com/clulab/reach/pull/686/files.
 
 ### Updating the NER files
 Once edits have been made to one or more files in the `kb` folder, the NER
