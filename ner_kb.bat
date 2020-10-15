@@ -11,7 +11,6 @@ cd ../reach
 REM generate the NER KBs here
 sbt "runMain org.clulab.processors.bionlp.ner.KBGenerator ../bioresources/ner_kb.config ../bioresources/src/main/resources/org/clulab/reach/kb/ ../bioresources/src/main/resources/org/clulab/reach/kb/ner"
 
-REM generate the serialized LexiconNER model now
-sbt "runMain org.clulab.processors.bionlp.ner.KBLoader ../bioresources/src/main/resources/org/clulab/reach/kb/ner/model.ser.gz"
+echo "Be sure to read the instructions to ner_model.bat and run that as well."
 
 cd ../bioresources
