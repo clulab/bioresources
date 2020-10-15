@@ -44,13 +44,13 @@ which should be serialized at this time so that it doesn't need to be rebuilt by
 reach at each runtime.  In order for this to happen, reach needs to have access
 to the information produced in the proceeding step as resources rather than as files.
 To arrange for this, one must publish bioresources locally as described in the
-next step, and reach needs to be configured to access the local version.  Follow
-the advice in the next section to accomplish this task.
+next step on testing, and reach needs to be configured to access the local version.
+Follow the advice in the testing section to accomplish this task.
 
 Next, run `ner_model.sh` to have reach build `model.ser.gz`.  The file should
-probably not have changed when the NER files were built, but it should now.
-This changed file show be published locally before the next step of testing
-commences.  `publishLocal` should be run twice before testing commences.
+probably not have changed when the NER files were built previously, but it should now.
+This changed file needs to be published locally before the next step of testing
+commences.  Thus, `publishLocal` should be run twice before testing commences.
 
 ### Testing bioresources updated with Reach
 To test changes in bioresources, first, bioresources need to be built using
