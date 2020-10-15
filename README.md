@@ -25,7 +25,7 @@ example of changes that needed to be made in Reach when adding
 `mesh_disease.tsv` to bioresources, see
 https://github.com/clulab/reach/pull/686/files.
 
-### Updating the NER files
+### Updating the NER files...
 Once edits have been made to one or more files in the `kb` folder, the NER
 files need to be regenerated. For this, `reach` needs to be cloned in the same
 parent folder in which the `bioresources` repo was cloned. Then, the
@@ -37,6 +37,20 @@ tokenization algorithm changes in BioNLPProcessor.
 The `ner_kb.sh` script uses [`ner_kb.config`](ner_kb.config) as a configuration
 input. If only a small number of KBs were modified, edit the file and keep
 only the modified KBs to avoid re-generating *all* KBs.
+
+### ...and the related model file
+The NER files just produced are used among other things to generate a LexiconNER
+which should be serialized at this time so that it doesn't need to be rebuilt by
+reach at each runtime.  In order for this to happen, reach needs to have access
+to the information produced in the proceeding step as resources rather than as files.
+To arrange for this, one must publish bioresources locally as described in the
+next step, and reach needs to be configured to access the local version.  Follow
+the advice in the next section to accomplish this task.
+
+Next, run `ner_model.sh` to have reach build `model.ser.gz`.  The file should
+probably not have changed when the NER files were built, but it should now.
+This changed file show be published locally before the next step of testing
+commences.  `publishLocal` should be run twice before testing commences.
 
 ### Testing bioresources updated with Reach
 To test changes in bioresources, first, bioresources need to be built using
