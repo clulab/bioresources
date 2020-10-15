@@ -4,7 +4,7 @@ name := "bioresources"
 
 organization := "org.clulab"
 
-scalaVersion := "2.11.8"
+scalaVersion := "2.12.12"
 
 
 // these are the steps to be performed during release
