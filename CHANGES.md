@@ -1,7 +1,8 @@
 #Changes
 =======
-+ **1.1.34-SNAPSHOT** - Remove ChEBI, PubChem and MeSH entries that produce spurious groundings.
-+ **1.1.34-SNAPSHOT** - Update UniProt to include latest entries.
++ **1.1.34** - No longer support the serialized model file.
++ **1.1.34** - Remove ChEBI, PubChem and MeSH entries that produce spurious groundings.
++ **1.1.34** - Update UniProt to include latest entries.
 + **1.1.33** - Added MeSH diseases.
 + **1.1.32** - UP has been updated, GO significantly extended and updated, CHEBI restored and updated, and HGNC added as a source of synonyms for human proteins in UP. Better stop words. 
 + **1.1.31** - Improved overrides and fix outdated GO IDs.
