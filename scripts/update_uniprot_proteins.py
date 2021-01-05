@@ -1,6 +1,8 @@
 import os
 import re
 import csv
+import gzip
+import tqdm
 import requests
 import itertools
 from protmapper.resources import _process_feature
@@ -53,6 +55,11 @@ def process_row(row):
         # We skip synonyms that are more than 5 words in length (consistent
         # with original KB construction).
         if len(gene.split(' ')) > 5:
+            continue
+        # We also skip single letter synonyms like M, S, etc. since they become
+        # problematic in NER (pick up lots of unrelated words). These can still
+        # be picked up when mentioned more explicitly, like "M protein" in text.
+        if len(gene) == 1:
             continue
         entries.append((gene, entry, organism))
 
@@ -115,16 +122,20 @@ if __name__ == '__main__':
     resource_fname = os.path.join(kb_dir, 'uniprot-proteins.tsv')
 
     # Download the custom UniProt resource file
+    print('Downloading %s' % uniprot_url)
     res = requests.get(uniprot_url, params=params)
     res.raise_for_status()
+
+    print('Saving downloaded entries')
     with open('uniprot_entries.tsv', 'w') as fh:
         fh.write(res.text)
     # Process the resource file into appropriate entries
     processed_entries = []
+    print('Processing downloaded entries')
     with open('uniprot_entries.tsv', 'r') as fh:
         reader = csv.reader(fh, delimiter='\t')
         next(reader)
-        for row in reader:
+        for row in tqdm.tqdm(reader):
             processed_entries += process_row(row)
     # We sort the entries first by the synonym but in a way that special
     # characters and capitalization is ignored, then sort by ID and then
@@ -134,7 +145,12 @@ if __name__ == '__main__':
                                                      x[0]).lower(), x[1],
                                                      x[2]))
     # Now dump the entries into an updated TSV file
+    print('Saving processed entries')
     with open(resource_fname, 'w') as fh:
         writer = csv.writer(fh, delimiter='\t')
         for entry in processed_entries:
             writer.writerow(entry)
+    # And then into a GZ file
+    with open(resource_fname, 'rb') as f1, \
+            gzip.open(resource_fname + '.gz', 'wb') as f2:
+        f2.writelines(f1)
