@@ -14,7 +14,7 @@ from protmapper.resources import _process_feature
 uniprot_url = 'http://www.uniprot.org/uniprot'
 # Get protein names, gene names and the organism
 columns = ['id', 'protein%20names', 'genes', 'organism',
-           'feature(CHAIN)', 'feature(PEPTIDE)']
+           'feature(CHAIN)', 'feature(PEPTIDE)', 'organism-id']
 # Only get reviewed entries and use TSV format
 params = {
     'sort': 'id',
@@ -30,7 +30,7 @@ def make_organism_mappings(taxonomy_ids):
     import obonet
     import networkx
     # Note the path can be changed here
-    obo_path = '/Users/ben/Downloads/ncbitaxon.obo'
+    obo_path = 'ncbitaxon.obo'
     print('Loading %s' % obo_path)
     g = obonet.read_obo(obo_path)
     # This dict maps specific taxonomy names to the name of one or more
@@ -42,24 +42,21 @@ def make_organism_mappings(taxonomy_ids):
         # We get all the ancestors that point to this term directly or
         # indirectly
         sub_terms = networkx.ancestors(g, 'NCBITaxon:%s' % taxonomy_id)
-        # We then map the name of the sub term to the name of the parent entry
+        # We then map the ID of the sub term to the name of the parent entry
         for sub_term in sub_terms:
-            sub_taxonomy_name = g.nodes[sub_term]['name']
-            mappings[sub_taxonomy_name].append(term_name)
+            mappings[sub_term.split(':')[1]].append(term_name)
     return dict(mappings)
 
 
-def get_extra_organism_synonyms(organism_synonyms, extra_organism_mappings):
+def get_extra_organism_synonyms(organism_id, extra_organism_mappings):
     if not extra_organism_mappings:
         return []
-    extra_organism_names = set()
-    for syn in organism_synonyms:
-        extra_organism_names |= set(extra_organism_mappings.get(syn, set()))
-    return sorted(list(extra_organism_names))
+    extra_organism_names = extra_organism_mappings.get(organism_id, [])
+    return sorted(extra_organism_names)
 
 
 def process_row(row, extra_organism_mappings=None):
-    entry, protein_names, genes, organisms, chains, peptides = row
+    entry, protein_names, genes, organisms, chains, peptides, organism_id = row
     # Gene names are space separated
     gene_synonyms = genes.split(' ') if genes else []
     # We use a more complex function to parse protein synonyms which appear
@@ -84,7 +81,7 @@ def process_row(row, extra_organism_mappings=None):
 
     # Here we add any additional organism names from parent taxonomy terms as
     # defned by extra_organism_mappings
-    organism_synonyms += get_extra_organism_synonyms(organism_synonyms,
+    organism_synonyms += get_extra_organism_synonyms(organism_id,
                                                      extra_organism_mappings)
 
     # We now take each gene synonym and each organism synonym and create all
@@ -168,7 +165,6 @@ if __name__ == '__main__':
     resource_fname = os.path.join(kb_dir, 'uniprot-proteins.tsv')
 
     # Download the custom UniProt resource file
-    '''
     print('Downloading from %s' % uniprot_url)
     res = requests.get(uniprot_url, params=params)
     res.raise_for_status()
@@ -176,7 +172,6 @@ if __name__ == '__main__':
     print('Saving downloaded entries')
     with open('uniprot_entries.tsv', 'w') as fh:
         fh.write(res.text)
-    '''
     # Process the resource file into appropriate entries
     processed_entries = []
     print('Processing downloaded entries')
