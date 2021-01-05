@@ -36,7 +36,11 @@ tokenization algorithm changes in BioNLPProcessor.
 
 The `ner_kb.sh` script uses [`ner_kb.config`](ner_kb.config) as a configuration
 input. If only a small number of KBs were modified, edit the file and keep
-only the modified KBs to avoid re-generating *all* KBs.
+only the modified KBs to avoid re-generating *all* KBs. The config file
+also controls what organisms' gene/protein synonyms should be included in the
+NER resources. By default, only human proteins are included but additional
+organism names can be listed in `ner_kb.config` to extend NER to these
+organisms.
 
 ### Testing bioresources updated with Reach
 To test changes in bioresources, first, bioresources need to be built using

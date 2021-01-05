@@ -11,8 +11,5 @@ cd ../reach
 # generate the NER KBs here
 sbt 'runMain org.clulab.processors.bionlp.ner.KBGenerator ../bioresources/ner_kb.config ../bioresources/src/main/resources/org/clulab/reach/kb/ ../bioresources/src/main/resources/org/clulab/reach/kb/ner'
 
-echo 'Be sure to read the instructions to ner_model.sh and run that as well.'
-
 cd ../bioresources
-
 
