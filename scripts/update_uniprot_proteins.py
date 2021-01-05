@@ -1,10 +1,12 @@
 import os
 import re
 import csv
+import sys
 import gzip
 import tqdm
 import requests
 import itertools
+from collections import defaultdict
 from protmapper.resources import _process_feature
 
 
@@ -24,7 +26,39 @@ params = {
 }
 
 
-def process_row(row):
+def make_organism_mappings(taxonomy_ids):
+    import obonet
+    import networkx
+    # Note the path can be changed here
+    obo_path = '/Users/ben/Downloads/ncbitaxon.obo'
+    print('Loading %s' % obo_path)
+    g = obonet.read_obo(obo_path)
+    # This dict maps specific taxonomy names to the name of one or more
+    # parent terms that will be included as organisms for it in the resource
+    # file
+    mappings = defaultdict(list)
+    for taxonomy_id in taxonomy_ids:
+        term_name = g.nodes['NCBITaxon:%s' % taxonomy_id]['name']
+        # We get all the ancestors that point to this term directly or
+        # indirectly
+        sub_terms = networkx.ancestors(g, 'NCBITaxon:%s' % taxonomy_id)
+        # We then map the name of the sub term to the name of the parent entry
+        for sub_term in sub_terms:
+            sub_taxonomy_name = g.nodes[sub_term]['name']
+            mappings[sub_taxonomy_name].append(term_name)
+    return dict(mappings)
+
+
+def get_extra_organism_synonyms(organism_synonyms, extra_organism_mappings):
+    if not extra_organism_mappings:
+        return []
+    extra_organism_names = set()
+    for syn in organism_synonyms:
+        extra_organism_names |= set(extra_organism_mappings.get(syn, set()))
+    return sorted(list(extra_organism_names))
+
+
+def process_row(row, extra_organism_mappings=None):
     entry, protein_names, genes, organisms, chains, peptides = row
     # Gene names are space separated
     gene_synonyms = genes.split(' ') if genes else []
@@ -47,6 +81,12 @@ def process_row(row):
         organism_synonyms[0] = '%s (%s)' % (organism_synonyms[0],
                                             organism_synonyms[1])
         organism_synonyms = [organism_synonyms[0]] + organism_synonyms[2:]
+
+    # Here we add any additional organism names from parent taxonomy terms as
+    # defned by extra_organism_mappings
+    organism_synonyms += get_extra_organism_synonyms(organism_synonyms,
+                                                     extra_organism_mappings)
+
     # We now take each gene synonym and each organism synonym and create all
     # combinations of these as entries.
     entries = []
@@ -115,6 +155,12 @@ def parse_uniprot_synonyms(synonyms_str):
 
 
 if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        extra_organisms = sys.argv[1:]
+        print('Adding extra organism mappings for: %s' % str(extra_organisms))
+        extra_organism_mappings = make_organism_mappings(extra_organisms)
+    else:
+        extra_organism_mappings = {}
     # Basic positioning of folders
     here = os.path.dirname(os.path.abspath(__file__))
     kb_dir = os.path.join(here, os.pardir, 'src', 'main', 'resources', 'org',
@@ -122,13 +168,15 @@ if __name__ == '__main__':
     resource_fname = os.path.join(kb_dir, 'uniprot-proteins.tsv')
 
     # Download the custom UniProt resource file
-    print('Downloading %s' % uniprot_url)
+    '''
+    print('Downloading from %s' % uniprot_url)
     res = requests.get(uniprot_url, params=params)
     res.raise_for_status()
 
     print('Saving downloaded entries')
     with open('uniprot_entries.tsv', 'w') as fh:
         fh.write(res.text)
+    '''
     # Process the resource file into appropriate entries
     processed_entries = []
     print('Processing downloaded entries')
@@ -136,7 +184,9 @@ if __name__ == '__main__':
         reader = csv.reader(fh, delimiter='\t')
         next(reader)
         for row in tqdm.tqdm(reader):
-            processed_entries += process_row(row)
+            processed_entries += \
+                process_row(row,
+                            extra_organism_mappings=extra_organism_mappings)
     # We sort the entries first by the synonym but in a way that special
     # characters and capitalization is ignored, then sort by ID and then
     # by organism.
