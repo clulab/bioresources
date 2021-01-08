@@ -1,5 +1,6 @@
 #Changes
 =======
++ **1.1.36** - Add additional synonyms for SARS-CoV-2 proteins.
 + **1.1.35** - Update UniProt entries and remove single-letter synonyms.
 + **1.1.34** - No longer support the serialized model file.
 + **1.1.34** - Remove ChEBI, PubChem and MeSH entries that produce spurious groundings.
