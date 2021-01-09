@@ -1,3 +1,5 @@
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.clulab/bioresources/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.clulab/bioresources)
+
 # bioresources
 Data resources from the biomedical domain
 
