@@ -40,6 +40,9 @@ def pluralize(txt):
 
 
 def accept_entry(name, txt, cl_id, data):
+    # Some synonyms are description sentences that we skip
+    if txt.endswith('.'):
+        return False
     return True
 
 
@@ -73,11 +76,11 @@ if __name__ == '__main__':
 
     # We sort the entries first by the synonym but in a way that special
     # characters and capitalization is ignored, then sort by ID
-    entries = sorted(entries)
+    entries = sorted(set(entries))
 
     # Now dump the entries into an updated TSV file
     with open(resource_fname, 'w', newline='') as fh:
-        writer = csv.writer(fh, delimiter="\t")
+        writer = csv.writer(fh, delimiter="\t", lineterminator='\n')
         for entry in entries:
             writer.writerow(entry)
     # And then into a GZ file
