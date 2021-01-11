@@ -30,6 +30,15 @@ def get_synonyms(syns_entry):
     return synonyms
 
 
+def pluralize(txt):
+    if txt.endswith(('s', 'x', 'o', 'ch', 'sh')):
+        return txt + 'es'
+    elif txt.endswith('y'):
+        return txt[:-1] + 'ies'
+    else:
+        return txt + 's'
+
+
 def accept_entry(name, txt, cl_id, data):
     return True
 
@@ -56,15 +65,15 @@ if __name__ == '__main__':
 
         synonyms = get_synonyms(raw_synonyms)
 
+        pluralized = [pluralize(n) for n in [name] + synonyms]
+
         # Format of the output defined here
-        entries += [(txt, cl_id) for txt in ([name] + synonyms)
+        entries += [(txt, cl_id) for txt in ([name] + synonyms + pluralized)
                     if accept_entry(name, txt, cl_id, data)]
 
     # We sort the entries first by the synonym but in a way that special
     # characters and capitalization is ignored, then sort by ID
-    entries = sorted(entries, key=(lambda x:
-                                   (re.sub('[^A-Za-z0-9]', '', x[0]).lower(),
-                                    x[1])))
+    entries = sorted(entries)
 
     # Now dump the entries into an updated TSV file
     with open(resource_fname, 'w', newline='') as fh:
