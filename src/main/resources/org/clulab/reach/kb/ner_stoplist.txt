@@ -88,6 +88,5 @@ top
 tube
 water
 wt
-fig
 figure
 fig
