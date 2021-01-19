@@ -1,5 +1,6 @@
 #Changes
 =======
++ **1.1.38** - Add override from RAC1
 + **1.1.37** - Update Cell Ontology groundings and add synonyms/overrides for CD4+/CD8+ T cells
 + **1.1.36** - Add additional synonyms for SARS-CoV-2 proteins.
 + **1.1.35** - Update UniProt entries and remove single-letter synonyms.
