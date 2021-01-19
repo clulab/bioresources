@@ -184,6 +184,78 @@ def parse_uniprot_synonyms(synonyms_str):
         synonyms_str = synonyms_str[:-len(syn)-3]
 
 
+def download_hgnc_entries():
+    # Select relevant columns and parameters
+    cols = ['gd_hgnc_id', 'gd_app_sym', 'gd_app_name', 'gd_status',
+            'gd_aliases', 'gd_prev_sym', 'md_prot_id']
+    statuses = ['Approved']
+    params = {
+        'hgnc_dbtag': 'on',
+        'order_by': 'gd_app_sym_sort',
+        'format': 'text',
+        'submit': 'submit'
+    }
+
+    # Construct a download URL from the above parameters
+    url = 'https://www.genenames.org/cgi-bin/download/custom?'
+    url += '&'.join(['col=%s' % c for c in cols]) + '&'
+    url += '&'.join(['status=%s' % s for s in statuses]) + '&'
+    url += '&'.join(['%s=%s' % (k, v) for k, v in params.items()])
+
+    # Save the download into a file
+    res = requests.get(url)
+    with open('hgnc_entries.tsv', 'wb') as fh:
+        fh.write(res.content)
+
+
+def generate_hgnc_terms():
+    organism_synonyms = ['Human', 'Homo sapiens']
+    organism_id = '9606'
+    organism_synonyms += get_extra_organism_synonyms(organism_id,
+                                                     extra_organism_mappings)
+    entries = []
+    nskipped = 0
+    with open('hgnc_entries.tsv', 'r') as fh:
+        reader = csv.reader(fh, delimiter='\t')
+        next(reader)
+        for row in reader:
+            hgnc_id, hgnc_symbol, protein_name, status, synonyms_str, \
+            prev_symbols_str, uniprot_ids_str = row
+            uniprot_ids = [s.strip() for s in uniprot_ids_str.split(', ')] \
+                if uniprot_ids_str else []
+            # Skip genes that don't correspond to a single protein
+            if len(uniprot_ids) != 1:
+                nskipped += 1
+                continue
+            uniprot_id = uniprot_ids[0]
+            synonym_list = [s.strip() for s in synonyms_str.split(', ')] \
+                if synonyms_str else []
+            prev_symbols_list = [s.strip()
+                                 for s in prev_symbols_str.split(', ')] \
+                if prev_symbols_str else []
+            synonyms = [hgnc_symbol, protein_name] + synonym_list + \
+                       prev_symbols_list
+            for synonym in synonyms:
+                for species in organism_synonyms:
+                    entries.append((synonym, uniprot_id, species))
+    print('Found a total of %d entries and skipped %d rows' %
+          (len(entries), nskipped))
+    return entries
+
+
+def remove_uniprot_redundancies(uniprot_entries, hgnc_entries):
+    print('Filtering %d entries from HGNC' % len(hgnc_entries))
+    # Get all human protein synonyms
+    uniprot_entries = {(entry[0], entry[1])
+                       for entry in uniprot_entries if entry[2] == 'Human'}
+    # Remove redundancies
+    unique_hgnc_entries = [entry for entry in hgnc_entries
+                           if (entry[0], entry[1]) not in uniprot_entries]
+    print('Filtered to %d entries that aren\'t in UniProt' %
+          len(unique_hgnc_entries))
+    return unique_hgnc_entries
+
+
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         extra_organisms = sys.argv[1:]
@@ -217,10 +289,18 @@ if __name__ == '__main__':
                             extra_organism_mappings=extra_organism_mappings)
     # Add more SARS-CoV-2 synonyms
     processed_entries += get_sars_cov2_synonyms()
+    # Add HGNC syonyms
+    hgnc_entries = generate_hgnc_terms()
     # We sort the entries first by the synonym but in a way that special
     # characters and capitalization is ignored, then sort by ID and then
     # by organism.
-    processed_entries = sorted(processed_entries,
+    hgnc_entries = remove_uniprot_redundancies(processed_entries,
+                                               hgnc_entries)
+    processed_entries += hgnc_entries
+    # We sort the entries first by the synonym but in a way that special
+    # characters and capitalization is ignored, then sort by ID and then
+    # by organism.
+    processed_entries = sorted(set(processed_entries),
                                key=lambda x: (re.sub('[^A-Za-z0-9]', '',
                                                      x[0]).lower(), x[1],
                                                      x[2]))
